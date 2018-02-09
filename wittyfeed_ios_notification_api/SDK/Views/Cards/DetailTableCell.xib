@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="209" id="KGk-i7-Jjw" customClass="DetailTableCell" customModule="wittyfeed_ios_sdk" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="208.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENa-tX-rRG">
+                        <rect key="frame" x="10" y="10" width="355" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="CLe-gS-ImH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="descriptiion area" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiW-5m-GdW">
+                        <rect key="frame" x="10" y="180" width="355" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-248797" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-sT-4iA">
+                        <rect key="frame" x="0.0" y="40" width="375" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="130" id="LSA-FT-1E4"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ENa-tX-rRG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3Nj-Kr-bBL"/>
+                    <constraint firstAttribute="trailing" secondItem="WiW-5m-GdW" secondAttribute="trailing" constant="10" id="4Jj-7t-FDV"/>
+                    <constraint firstItem="WiW-5m-GdW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8bu-F0-Dsk"/>
+                    <constraint firstItem="WiW-5m-GdW" firstAttribute="top" secondItem="Thw-sT-4iA" secondAttribute="bottom" constant="10" id="Oa4-N7-jjz"/>
+                    <constraint firstItem="Thw-sT-4iA" firstAttribute="top" secondItem="ENa-tX-rRG" secondAttribute="bottom" constant="10" id="PHU-Fe-qdU"/>
+                    <constraint firstItem="ENa-tX-rRG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Pzf-de-F8J"/>
+                    <constraint firstItem="WiW-5m-GdW" firstAttribute="top" secondItem="Thw-sT-4iA" secondAttribute="bottom" constant="10" id="WeU-I5-cnw"/>
+                    <constraint firstAttribute="trailing" secondItem="Thw-sT-4iA" secondAttribute="trailing" id="Z40-vw-g7G"/>
+                    <constraint firstAttribute="trailing" secondItem="ENa-tX-rRG" secondAttribute="trailing" constant="10" id="cOR-A3-Zv9"/>
+                    <constraint firstItem="Thw-sT-4iA" firstAttribute="top" secondItem="ENa-tX-rRG" secondAttribute="bottom" constant="10" id="deC-WL-Jeu"/>
+                    <constraint firstItem="Thw-sT-4iA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jUl-BI-BvA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="captionDesc" destination="WiW-5m-GdW" id="Cyy-Tc-9Yr"/>
+                <outlet property="captionImg" destination="Thw-sT-4iA" id="TFX-d2-3Jw"/>
+                <outlet property="captionLbl" destination="ENa-tX-rRG" id="otf-UL-e0h"/>
+            </connections>
+            <point key="canvasLocation" x="-124" y="-84"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pexels-photo-248797" width="200" height="80"/>
+    </resources>
+</document>

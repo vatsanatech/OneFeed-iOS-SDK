@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>642662744349-t6tflmiqonjlqf33v8lk07r8qdkkp730.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.642662744349-t6tflmiqonjlqf33v8lk07r8qdkkp730</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyEcFrE6A21f-x5-enk8aOXSX_Gsr8U2U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>642662744349</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sdk.wittyfeed.debug</string>
+	<key>PROJECT_ID</key>
+	<string>witty-ios-sdk</string>
+	<key>STORAGE_BUCKET</key>
+	<string>witty-ios-sdk.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:642662744349:ios:9c891c0c2080995d</string>
+	<key>DATABASE_URL</key>
+	<string>https://witty-ios-sdk.firebaseio.com</string>
+</dict>
+</plist>

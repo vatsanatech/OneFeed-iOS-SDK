@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="S3" id="gTV-IL-0wX" customClass="S3" customModule="wittyfeed_ios_sdk" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="231"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="458" height="231"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ta-gF-flz">
+                        <rect key="frame" x="0.0" y="0.0" width="152.5" height="231"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ng6-rO-PJC">
+                        <rect key="frame" x="152.5" y="0.0" width="153" height="231"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-hj-6Co">
+                        <rect key="frame" x="305.5" y="0.0" width="152.5" height="231"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0a1-Rf-85i"/>
+                <constraint firstAttribute="bottom" secondItem="Wgy-hj-6Co" secondAttribute="bottom" id="1XR-oK-Ns7"/>
+                <constraint firstAttribute="trailing" secondItem="Wgy-hj-6Co" secondAttribute="trailing" id="3Vm-Ts-i9l"/>
+                <constraint firstItem="Wgy-hj-6Co" firstAttribute="leading" secondItem="Ng6-rO-PJC" secondAttribute="trailing" id="8RN-qg-5jM"/>
+                <constraint firstItem="Wgy-hj-6Co" firstAttribute="leading" secondItem="Ng6-rO-PJC" secondAttribute="trailing" id="DVi-cE-Kqy"/>
+                <constraint firstAttribute="bottom" secondItem="Ng6-rO-PJC" secondAttribute="bottom" id="G8a-HJ-K62"/>
+                <constraint firstAttribute="bottom" secondItem="2ta-gF-flz" secondAttribute="bottom" id="GHh-rE-iOL"/>
+                <constraint firstAttribute="trailing" secondItem="Wgy-hj-6Co" secondAttribute="trailing" id="KOb-Vb-3QT"/>
+                <constraint firstAttribute="bottom" secondItem="Wgy-hj-6Co" secondAttribute="bottom" id="MbJ-In-als"/>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rxa-UB-EPZ"/>
+                <constraint firstAttribute="bottom" secondItem="Ng6-rO-PJC" secondAttribute="bottom" id="S8t-RY-uKj"/>
+                <constraint firstItem="Ng6-rO-PJC" firstAttribute="leading" secondItem="2ta-gF-flz" secondAttribute="trailing" id="WcX-sX-dVa"/>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XNQ-47-jhj"/>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="width" secondItem="Wgy-hj-6Co" secondAttribute="width" id="d2Z-Ef-Hg0"/>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="width" secondItem="Ng6-rO-PJC" secondAttribute="width" id="eSp-f9-VUx"/>
+                <constraint firstItem="Ng6-rO-PJC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="h5O-pm-oFb"/>
+                <constraint firstItem="Ng6-rO-PJC" firstAttribute="leading" secondItem="2ta-gF-flz" secondAttribute="trailing" id="h9r-Wr-xUY"/>
+                <constraint firstItem="Wgy-hj-6Co" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="inL-Ns-Tat"/>
+                <constraint firstAttribute="bottom" secondItem="2ta-gF-flz" secondAttribute="bottom" id="kOy-8b-jki"/>
+                <constraint firstItem="Ng6-rO-PJC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kny-Pu-W71"/>
+                <constraint firstItem="Wgy-hj-6Co" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uDr-SS-Aum"/>
+                <constraint firstItem="2ta-gF-flz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="uM9-ek-3Ui"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="-3" height="280"/>
+            <connections>
+                <outlet property="view1" destination="2ta-gF-flz" id="8aO-Uk-DYJ"/>
+                <outlet property="view2" destination="Ng6-rO-PJC" id="ZiY-1J-1s5"/>
+                <outlet property="view3" destination="Wgy-hj-6Co" id="cMN-9w-U1T"/>
+            </connections>
+            <point key="canvasLocation" x="1" y="-96"/>
+        </collectionViewCell>
+    </objects>
+</document>
