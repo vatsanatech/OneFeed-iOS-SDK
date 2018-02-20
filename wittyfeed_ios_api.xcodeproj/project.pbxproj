@@ -8,89 +8,101 @@
 
 /* Begin PBXBuildFile section */
 		041499EE202ACEF2002D947D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041499ED202ACEF2002D947D /* GoogleService-Info.plist */; };
-		04548FF5202D6C6F00BD7A13 /* WittyFeedSDKGoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FCC202D6C6F00BD7A13 /* WittyFeedSDKGoogleAnalytics.swift */; };
-		04548FF6202D6C6F00BD7A13 /* WittyFeedSDKMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FCD202D6C6F00BD7A13 /* WittyFeedSDKMain.swift */; };
-		04548FF7202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FCE202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.xib */; };
-		04548FF8202D6C6F00BD7A13 /* WittyFeedSDKSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FCF202D6C6F00BD7A13 /* WittyFeedSDKSingleton.swift */; };
-		04548FF9202D6C6F00BD7A13 /* WittyFeedSDKApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD0202D6C6F00BD7A13 /* WittyFeedSDKApiClient.swift */; };
-		04548FFA202D6C6F00BD7A13 /* WittyFeedSDKNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD1202D6C6F00BD7A13 /* WittyFeedSDKNotificationManager.swift */; };
-		04548FFB202D6C6F00BD7A13 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD3202D6C6F00BD7A13 /* UtilsExtensions.swift */; };
-		04548FFC202D6C6F00BD7A13 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD5202D6C6F00BD7A13 /* Block.swift */; };
-		04548FFD202D6C6F00BD7A13 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD6202D6C6F00BD7A13 /* Card.swift */; };
-		04548FFE202D6C6F00BD7A13 /* CloudMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD7202D6C6F00BD7A13 /* CloudMessage.swift */; };
-		04548FFF202D6C6F00BD7A13 /* captions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD8202D6C6F00BD7A13 /* captions.swift */; };
-		04549000202D6C6F00BD7A13 /* WittyFeedSDKNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FD9202D6C6F00BD7A13 /* WittyFeedSDKNetworking.swift */; };
-		04549001202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FDA202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.swift */; };
-		04549002202D6C6F00BD7A13 /* S2L.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FDD202D6C6F00BD7A13 /* S2L.xib */; };
-		04549003202D6C6F00BD7A13 /* S3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FDE202D6C6F00BD7A13 /* S3.xib */; };
-		04549004202D6C6F00BD7A13 /* LS2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FDF202D6C6F00BD7A13 /* LS2.xib */; };
-		04549005202D6C6F00BD7A13 /* S2L.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FE0202D6C6F00BD7A13 /* S2L.swift */; };
-		04549006202D6C6F00BD7A13 /* M2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FE1202D6C6F00BD7A13 /* M2.xib */; };
-		04549007202D6C6F00BD7A13 /* LS2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FE2202D6C6F00BD7A13 /* LS2.swift */; };
-		04549008202D6C6F00BD7A13 /* M2F.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FE3202D6C6F00BD7A13 /* M2F.xib */; };
-		04549009202D6C6F00BD7A13 /* S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FE4202D6C6F00BD7A13 /* S3.swift */; };
-		0454900A202D6C6F00BD7A13 /* M2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FE5202D6C6F00BD7A13 /* M2.swift */; };
-		0454900B202D6C6F00BD7A13 /* M2F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04548FE6202D6C6F00BD7A13 /* M2F.swift */; };
-		0454900C202D6C6F00BD7A13 /* section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FE8202D6C6F00BD7A13 /* section.xib */; };
-		0454900D202D6C6F00BD7A13 /* CardTypeLandscape2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FE9202D6C6F00BD7A13 /* CardTypeLandscape2.xib */; };
-		0454900E202D6C6F00BD7A13 /* CardTypeLandscape3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FEA202D6C6F00BD7A13 /* CardTypeLandscape3.xib */; };
-		0454900F202D6C6F00BD7A13 /* DetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FEB202D6C6F00BD7A13 /* DetailTableCell.xib */; };
-		04549010202D6C6F00BD7A13 /* CardTypeLandscape1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FEC202D6C6F00BD7A13 /* CardTypeLandscape1.xib */; };
-		04549011202D6C6F00BD7A13 /* banner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FED202D6C6F00BD7A13 /* banner.xib */; };
-		04549012202D6C6F00BD7A13 /* card_type_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FEE202D6C6F00BD7A13 /* card_type_6.xib */; };
-		04549013202D6C6F00BD7A13 /* filler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FEF202D6C6F00BD7A13 /* filler.xib */; };
-		04549014202D6C6F00BD7A13 /* card_type_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FF0202D6C6F00BD7A13 /* card_type_5.xib */; };
-		04549015202D6C6F00BD7A13 /* card_type_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FF1202D6C6F00BD7A13 /* card_type_4.xib */; };
-		04549016202D6C6F00BD7A13 /* card_type_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FF2202D6C6F00BD7A13 /* card_type_1.xib */; };
-		04549017202D6C6F00BD7A13 /* card_type_3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FF3202D6C6F00BD7A13 /* card_type_3.xib */; };
-		04549018202D6C6F00BD7A13 /* card_type_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04548FF4202D6C6F00BD7A13 /* card_type_2.xib */; };
+		04344C39203C1971006E0088 /* WittyFeedSDKGoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C0A203C1970006E0088 /* WittyFeedSDKGoogleAnalytics.swift */; };
+		04344C3A203C1971006E0088 /* WittyFeedSDKMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C0B203C1970006E0088 /* WittyFeedSDKMain.swift */; };
+		04344C3B203C1971006E0088 /* WittyFeedSDKNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C0C203C1970006E0088 /* WittyFeedSDKNotificationViewController.xib */; };
+		04344C3C203C1971006E0088 /* WittyFeedSDKSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C0D203C1970006E0088 /* WittyFeedSDKSingleton.swift */; };
+		04344C3D203C1971006E0088 /* WittyFeedSDKApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C0E203C1970006E0088 /* WittyFeedSDKApiClient.swift */; };
+		04344C3E203C1971006E0088 /* WittyFeedSDKNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C0F203C1970006E0088 /* WittyFeedSDKNotificationManager.swift */; };
+		04344C3F203C1971006E0088 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C11203C1970006E0088 /* UtilsExtensions.swift */; };
+		04344C40203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C12203C1970006E0088 /* WittyFeedSDKWaterfallCollectionVC.swift */; };
+		04344C41203C1971006E0088 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C14203C1970006E0088 /* Block.swift */; };
+		04344C42203C1971006E0088 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C15203C1970006E0088 /* Card.swift */; };
+		04344C43203C1971006E0088 /* CloudMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C16203C1970006E0088 /* CloudMessage.swift */; };
+		04344C44203C1971006E0088 /* CardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C17203C1970006E0088 /* CardFactory.swift */; };
+		04344C45203C1971006E0088 /* captions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C18203C1970006E0088 /* captions.swift */; };
+		04344C46203C1971006E0088 /* WittyFeedSDKNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C19203C1970006E0088 /* WittyFeedSDKNetworking.swift */; };
+		04344C47203C1971006E0088 /* WittyFeedSDKNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C1A203C1970006E0088 /* WittyFeedSDKNotificationViewController.swift */; };
+		04344C48203C1971006E0088 /* S2L.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C1D203C1971006E0088 /* S2L.xib */; };
+		04344C49203C1971006E0088 /* S3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C1E203C1971006E0088 /* S3.xib */; };
+		04344C4A203C1971006E0088 /* LS2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C1F203C1971006E0088 /* LS2.xib */; };
+		04344C4B203C1971006E0088 /* S2L.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C20203C1971006E0088 /* S2L.swift */; };
+		04344C4C203C1971006E0088 /* M2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C21203C1971006E0088 /* M2.xib */; };
+		04344C4D203C1971006E0088 /* WittyFeedSDKLoaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C22203C1971006E0088 /* WittyFeedSDKLoaderCell.xib */; };
+		04344C4E203C1971006E0088 /* LS2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C23203C1971006E0088 /* LS2.swift */; };
+		04344C4F203C1971006E0088 /* M2F.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C24203C1971006E0088 /* M2F.xib */; };
+		04344C50203C1971006E0088 /* S3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C25203C1971006E0088 /* S3.swift */; };
+		04344C51203C1971006E0088 /* M2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C26203C1971006E0088 /* M2.swift */; };
+		04344C52203C1971006E0088 /* M2F.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C27203C1971006E0088 /* M2F.swift */; };
+		04344C53203C1971006E0088 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04344C28203C1971006E0088 /* Info.plist */; };
+		04344C54203C1971006E0088 /* section.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2A203C1971006E0088 /* section.xib */; };
+		04344C55203C1971006E0088 /* CardTypeLandscape2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2B203C1971006E0088 /* CardTypeLandscape2.xib */; };
+		04344C56203C1971006E0088 /* CardTypeLandscape3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2C203C1971006E0088 /* CardTypeLandscape3.xib */; };
+		04344C57203C1971006E0088 /* DetailTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2D203C1971006E0088 /* DetailTableCell.xib */; };
+		04344C58203C1971006E0088 /* CardTypeLandscape1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2E203C1971006E0088 /* CardTypeLandscape1.xib */; };
+		04344C59203C1971006E0088 /* banner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C2F203C1971006E0088 /* banner.xib */; };
+		04344C5A203C1971006E0088 /* card_type_6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C30203C1971006E0088 /* card_type_6.xib */; };
+		04344C5B203C1971006E0088 /* filler.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C31203C1971006E0088 /* filler.xib */; };
+		04344C5C203C1971006E0088 /* card_type_5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C32203C1971006E0088 /* card_type_5.xib */; };
+		04344C5D203C1971006E0088 /* card_type_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C33203C1971006E0088 /* card_type_4.xib */; };
+		04344C5E203C1971006E0088 /* card_type_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C34203C1971006E0088 /* card_type_1.xib */; };
+		04344C5F203C1971006E0088 /* card_type_3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C35203C1971006E0088 /* card_type_3.xib */; };
+		04344C60203C1971006E0088 /* card_type_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C36203C1971006E0088 /* card_type_2.xib */; };
+		04344C61203C1971006E0088 /* WittyFeedSDKLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04344C37203C1971006E0088 /* WittyFeedSDKLoaderCell.swift */; };
+		04344C62203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04344C38203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.xib */; };
 		0489143B20248791007E6102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489143A20248791007E6102 /* AppDelegate.swift */; };
 		0489143D20248791007E6102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489143C20248791007E6102 /* ViewController.swift */; };
 		0489144020248791007E6102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489143E20248791007E6102 /* Main.storyboard */; };
 		0489144220248791007E6102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489144120248791007E6102 /* Assets.xcassets */; };
 		0489144520248791007E6102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0489144320248791007E6102 /* LaunchScreen.storyboard */; };
-		8093E38A3F0C3A3413E9A7CF /* Pods_wittyfeed_ios_notification_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297E613448F160CB093D5D40 /* Pods_wittyfeed_ios_notification_api.framework */; };
+		45F3B386845F9C3921087E81 /* Pods_wittyfeed_ios_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF989753490419EC12A9AF1 /* Pods_wittyfeed_ios_api.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041499ED202ACEF2002D947D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		041499EF202C1912002D947D /* wittyfeed_ios_notification_api.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wittyfeed_ios_notification_api.entitlements; sourceTree = "<group>"; };
-		04548FCC202D6C6F00BD7A13 /* WittyFeedSDKGoogleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKGoogleAnalytics.swift; sourceTree = "<group>"; };
-		04548FCD202D6C6F00BD7A13 /* WittyFeedSDKMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKMain.swift; sourceTree = "<group>"; };
-		04548FCE202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKNotificationViewController.xib; sourceTree = "<group>"; };
-		04548FCF202D6C6F00BD7A13 /* WittyFeedSDKSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKSingleton.swift; sourceTree = "<group>"; };
-		04548FD0202D6C6F00BD7A13 /* WittyFeedSDKApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKApiClient.swift; sourceTree = "<group>"; };
-		04548FD1202D6C6F00BD7A13 /* WittyFeedSDKNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNotificationManager.swift; sourceTree = "<group>"; };
-		04548FD3202D6C6F00BD7A13 /* UtilsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
-		04548FD5202D6C6F00BD7A13 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		04548FD6202D6C6F00BD7A13 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		04548FD7202D6C6F00BD7A13 /* CloudMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMessage.swift; sourceTree = "<group>"; };
-		04548FD8202D6C6F00BD7A13 /* captions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = captions.swift; sourceTree = "<group>"; };
-		04548FD9202D6C6F00BD7A13 /* WittyFeedSDKNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNetworking.swift; sourceTree = "<group>"; };
-		04548FDA202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNotificationViewController.swift; sourceTree = "<group>"; };
-		04548FDD202D6C6F00BD7A13 /* S2L.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S2L.xib; sourceTree = "<group>"; };
-		04548FDE202D6C6F00BD7A13 /* S3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S3.xib; sourceTree = "<group>"; };
-		04548FDF202D6C6F00BD7A13 /* LS2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LS2.xib; sourceTree = "<group>"; };
-		04548FE0202D6C6F00BD7A13 /* S2L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S2L.swift; sourceTree = "<group>"; };
-		04548FE1202D6C6F00BD7A13 /* M2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = M2.xib; sourceTree = "<group>"; };
-		04548FE2202D6C6F00BD7A13 /* LS2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LS2.swift; sourceTree = "<group>"; };
-		04548FE3202D6C6F00BD7A13 /* M2F.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = M2F.xib; sourceTree = "<group>"; };
-		04548FE4202D6C6F00BD7A13 /* S3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3.swift; sourceTree = "<group>"; };
-		04548FE5202D6C6F00BD7A13 /* M2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2.swift; sourceTree = "<group>"; };
-		04548FE6202D6C6F00BD7A13 /* M2F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2F.swift; sourceTree = "<group>"; };
-		04548FE8202D6C6F00BD7A13 /* section.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = section.xib; sourceTree = "<group>"; };
-		04548FE9202D6C6F00BD7A13 /* CardTypeLandscape2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape2.xib; sourceTree = "<group>"; };
-		04548FEA202D6C6F00BD7A13 /* CardTypeLandscape3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape3.xib; sourceTree = "<group>"; };
-		04548FEB202D6C6F00BD7A13 /* DetailTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableCell.xib; sourceTree = "<group>"; };
-		04548FEC202D6C6F00BD7A13 /* CardTypeLandscape1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape1.xib; sourceTree = "<group>"; };
-		04548FED202D6C6F00BD7A13 /* banner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = banner.xib; sourceTree = "<group>"; };
-		04548FEE202D6C6F00BD7A13 /* card_type_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_6.xib; sourceTree = "<group>"; };
-		04548FEF202D6C6F00BD7A13 /* filler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = filler.xib; sourceTree = "<group>"; };
-		04548FF0202D6C6F00BD7A13 /* card_type_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_5.xib; sourceTree = "<group>"; };
-		04548FF1202D6C6F00BD7A13 /* card_type_4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_4.xib; sourceTree = "<group>"; };
-		04548FF2202D6C6F00BD7A13 /* card_type_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_1.xib; sourceTree = "<group>"; };
-		04548FF3202D6C6F00BD7A13 /* card_type_3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_3.xib; sourceTree = "<group>"; };
-		04548FF4202D6C6F00BD7A13 /* card_type_2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_2.xib; sourceTree = "<group>"; };
+		041499EF202C1912002D947D /* wittyfeed_ios_api.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wittyfeed_ios_api.entitlements; sourceTree = "<group>"; };
+		04344C0A203C1970006E0088 /* WittyFeedSDKGoogleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKGoogleAnalytics.swift; sourceTree = "<group>"; };
+		04344C0B203C1970006E0088 /* WittyFeedSDKMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKMain.swift; sourceTree = "<group>"; };
+		04344C0C203C1970006E0088 /* WittyFeedSDKNotificationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKNotificationViewController.xib; sourceTree = "<group>"; };
+		04344C0D203C1970006E0088 /* WittyFeedSDKSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKSingleton.swift; sourceTree = "<group>"; };
+		04344C0E203C1970006E0088 /* WittyFeedSDKApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKApiClient.swift; sourceTree = "<group>"; };
+		04344C0F203C1970006E0088 /* WittyFeedSDKNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNotificationManager.swift; sourceTree = "<group>"; };
+		04344C11203C1970006E0088 /* UtilsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
+		04344C12203C1970006E0088 /* WittyFeedSDKWaterfallCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKWaterfallCollectionVC.swift; sourceTree = "<group>"; };
+		04344C14203C1970006E0088 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		04344C15203C1970006E0088 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		04344C16203C1970006E0088 /* CloudMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMessage.swift; sourceTree = "<group>"; };
+		04344C17203C1970006E0088 /* CardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFactory.swift; sourceTree = "<group>"; };
+		04344C18203C1970006E0088 /* captions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = captions.swift; sourceTree = "<group>"; };
+		04344C19203C1970006E0088 /* WittyFeedSDKNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNetworking.swift; sourceTree = "<group>"; };
+		04344C1A203C1970006E0088 /* WittyFeedSDKNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNotificationViewController.swift; sourceTree = "<group>"; };
+		04344C1D203C1971006E0088 /* S2L.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S2L.xib; sourceTree = "<group>"; };
+		04344C1E203C1971006E0088 /* S3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = S3.xib; sourceTree = "<group>"; };
+		04344C1F203C1971006E0088 /* LS2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LS2.xib; sourceTree = "<group>"; };
+		04344C20203C1971006E0088 /* S2L.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S2L.swift; sourceTree = "<group>"; };
+		04344C21203C1971006E0088 /* M2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = M2.xib; sourceTree = "<group>"; };
+		04344C22203C1971006E0088 /* WittyFeedSDKLoaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKLoaderCell.xib; sourceTree = "<group>"; };
+		04344C23203C1971006E0088 /* LS2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LS2.swift; sourceTree = "<group>"; };
+		04344C24203C1971006E0088 /* M2F.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = M2F.xib; sourceTree = "<group>"; };
+		04344C25203C1971006E0088 /* S3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = S3.swift; sourceTree = "<group>"; };
+		04344C26203C1971006E0088 /* M2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2.swift; sourceTree = "<group>"; };
+		04344C27203C1971006E0088 /* M2F.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M2F.swift; sourceTree = "<group>"; };
+		04344C28203C1971006E0088 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04344C2A203C1971006E0088 /* section.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = section.xib; sourceTree = "<group>"; };
+		04344C2B203C1971006E0088 /* CardTypeLandscape2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape2.xib; sourceTree = "<group>"; };
+		04344C2C203C1971006E0088 /* CardTypeLandscape3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape3.xib; sourceTree = "<group>"; };
+		04344C2D203C1971006E0088 /* DetailTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableCell.xib; sourceTree = "<group>"; };
+		04344C2E203C1971006E0088 /* CardTypeLandscape1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTypeLandscape1.xib; sourceTree = "<group>"; };
+		04344C2F203C1971006E0088 /* banner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = banner.xib; sourceTree = "<group>"; };
+		04344C30203C1971006E0088 /* card_type_6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_6.xib; sourceTree = "<group>"; };
+		04344C31203C1971006E0088 /* filler.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = filler.xib; sourceTree = "<group>"; };
+		04344C32203C1971006E0088 /* card_type_5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_5.xib; sourceTree = "<group>"; };
+		04344C33203C1971006E0088 /* card_type_4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_4.xib; sourceTree = "<group>"; };
+		04344C34203C1971006E0088 /* card_type_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_1.xib; sourceTree = "<group>"; };
+		04344C35203C1971006E0088 /* card_type_3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_3.xib; sourceTree = "<group>"; };
+		04344C36203C1971006E0088 /* card_type_2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = card_type_2.xib; sourceTree = "<group>"; };
+		04344C37203C1971006E0088 /* WittyFeedSDKLoaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKLoaderCell.swift; sourceTree = "<group>"; };
+		04344C38203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKWaterfallCollectionVC.xib; sourceTree = "<group>"; };
 		0489143720248791007E6102 /* wittyfeed_ios_api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wittyfeed_ios_api.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0489143A20248791007E6102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0489143C20248791007E6102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +112,10 @@
 		0489144620248791007E6102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		297E613448F160CB093D5D40 /* Pods_wittyfeed_ios_notification_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wittyfeed_ios_notification_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C6DA3464823EBB59C119E19 /* Pods-wittyfeed_ios_notification_api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wittyfeed_ios_notification_api.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wittyfeed_ios_notification_api/Pods-wittyfeed_ios_notification_api.debug.xcconfig"; sourceTree = "<group>"; };
+		813E9C75D7563E9E700B9AE0 /* Pods-wittyfeed_ios_api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wittyfeed_ios_api.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wittyfeed_ios_api/Pods-wittyfeed_ios_api.debug.xcconfig"; sourceTree = "<group>"; };
 		851F10F9BD21CDE585B28764 /* Pods-wittyfeed_ios_notification_api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wittyfeed_ios_notification_api.release.xcconfig"; path = "Pods/Target Support Files/Pods-wittyfeed_ios_notification_api/Pods-wittyfeed_ios_notification_api.release.xcconfig"; sourceTree = "<group>"; };
+		9DF989753490419EC12A9AF1 /* Pods_wittyfeed_ios_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wittyfeed_ios_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4A73436DE9A9D9CD9C48BF9 /* Pods-wittyfeed_ios_api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wittyfeed_ios_api.release.xcconfig"; path = "Pods/Target Support Files/Pods-wittyfeed_ios_api/Pods-wittyfeed_ios_api.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,92 +123,98 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8093E38A3F0C3A3413E9A7CF /* Pods_wittyfeed_ios_notification_api.framework in Frameworks */,
+				45F3B386845F9C3921087E81 /* Pods_wittyfeed_ios_api.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04548FCB202D6C6F00BD7A13 /* SDK */ = {
+		04344C09203C1970006E0088 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				04548FCC202D6C6F00BD7A13 /* WittyFeedSDKGoogleAnalytics.swift */,
-				04548FCD202D6C6F00BD7A13 /* WittyFeedSDKMain.swift */,
-				04548FCE202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.xib */,
-				04548FCF202D6C6F00BD7A13 /* WittyFeedSDKSingleton.swift */,
-				04548FD0202D6C6F00BD7A13 /* WittyFeedSDKApiClient.swift */,
-				04548FD1202D6C6F00BD7A13 /* WittyFeedSDKNotificationManager.swift */,
-				04548FD2202D6C6F00BD7A13 /* Utils */,
-				04548FD4202D6C6F00BD7A13 /* Model */,
-				04548FD9202D6C6F00BD7A13 /* WittyFeedSDKNetworking.swift */,
-				04548FDA202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.swift */,
-				04548FDB202D6C6F00BD7A13 /* Views */,
+				04344C0A203C1970006E0088 /* WittyFeedSDKGoogleAnalytics.swift */,
+				04344C0B203C1970006E0088 /* WittyFeedSDKMain.swift */,
+				04344C0C203C1970006E0088 /* WittyFeedSDKNotificationViewController.xib */,
+				04344C0D203C1970006E0088 /* WittyFeedSDKSingleton.swift */,
+				04344C0E203C1970006E0088 /* WittyFeedSDKApiClient.swift */,
+				04344C0F203C1970006E0088 /* WittyFeedSDKNotificationManager.swift */,
+				04344C10203C1970006E0088 /* Utils */,
+				04344C12203C1970006E0088 /* WittyFeedSDKWaterfallCollectionVC.swift */,
+				04344C13203C1970006E0088 /* Model */,
+				04344C19203C1970006E0088 /* WittyFeedSDKNetworking.swift */,
+				04344C1A203C1970006E0088 /* WittyFeedSDKNotificationViewController.swift */,
+				04344C1B203C1970006E0088 /* Views */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
 		};
-		04548FD2202D6C6F00BD7A13 /* Utils */ = {
+		04344C10203C1970006E0088 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				04548FD3202D6C6F00BD7A13 /* UtilsExtensions.swift */,
+				04344C11203C1970006E0088 /* UtilsExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		04548FD4202D6C6F00BD7A13 /* Model */ = {
+		04344C13203C1970006E0088 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04548FD5202D6C6F00BD7A13 /* Block.swift */,
-				04548FD6202D6C6F00BD7A13 /* Card.swift */,
-				04548FD7202D6C6F00BD7A13 /* CloudMessage.swift */,
-				04548FD8202D6C6F00BD7A13 /* captions.swift */,
+				04344C14203C1970006E0088 /* Block.swift */,
+				04344C15203C1970006E0088 /* Card.swift */,
+				04344C16203C1970006E0088 /* CloudMessage.swift */,
+				04344C17203C1970006E0088 /* CardFactory.swift */,
+				04344C18203C1970006E0088 /* captions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		04548FDB202D6C6F00BD7A13 /* Views */ = {
+		04344C1B203C1970006E0088 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04548FDC202D6C6F00BD7A13 /* Blocks */,
-				04548FE7202D6C6F00BD7A13 /* Cards */,
+				04344C1C203C1971006E0088 /* Blocks */,
+				04344C29203C1971006E0088 /* Cards */,
+				04344C37203C1971006E0088 /* WittyFeedSDKLoaderCell.swift */,
+				04344C38203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		04548FDC202D6C6F00BD7A13 /* Blocks */ = {
+		04344C1C203C1971006E0088 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
-				04548FDD202D6C6F00BD7A13 /* S2L.xib */,
-				04548FDE202D6C6F00BD7A13 /* S3.xib */,
-				04548FDF202D6C6F00BD7A13 /* LS2.xib */,
-				04548FE0202D6C6F00BD7A13 /* S2L.swift */,
-				04548FE1202D6C6F00BD7A13 /* M2.xib */,
-				04548FE2202D6C6F00BD7A13 /* LS2.swift */,
-				04548FE3202D6C6F00BD7A13 /* M2F.xib */,
-				04548FE4202D6C6F00BD7A13 /* S3.swift */,
-				04548FE5202D6C6F00BD7A13 /* M2.swift */,
-				04548FE6202D6C6F00BD7A13 /* M2F.swift */,
+				04344C1D203C1971006E0088 /* S2L.xib */,
+				04344C1E203C1971006E0088 /* S3.xib */,
+				04344C1F203C1971006E0088 /* LS2.xib */,
+				04344C20203C1971006E0088 /* S2L.swift */,
+				04344C21203C1971006E0088 /* M2.xib */,
+				04344C22203C1971006E0088 /* WittyFeedSDKLoaderCell.xib */,
+				04344C23203C1971006E0088 /* LS2.swift */,
+				04344C24203C1971006E0088 /* M2F.xib */,
+				04344C25203C1971006E0088 /* S3.swift */,
+				04344C26203C1971006E0088 /* M2.swift */,
+				04344C27203C1971006E0088 /* M2F.swift */,
+				04344C28203C1971006E0088 /* Info.plist */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
 		};
-		04548FE7202D6C6F00BD7A13 /* Cards */ = {
+		04344C29203C1971006E0088 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				04548FE8202D6C6F00BD7A13 /* section.xib */,
-				04548FE9202D6C6F00BD7A13 /* CardTypeLandscape2.xib */,
-				04548FEA202D6C6F00BD7A13 /* CardTypeLandscape3.xib */,
-				04548FEB202D6C6F00BD7A13 /* DetailTableCell.xib */,
-				04548FEC202D6C6F00BD7A13 /* CardTypeLandscape1.xib */,
-				04548FED202D6C6F00BD7A13 /* banner.xib */,
-				04548FEE202D6C6F00BD7A13 /* card_type_6.xib */,
-				04548FEF202D6C6F00BD7A13 /* filler.xib */,
-				04548FF0202D6C6F00BD7A13 /* card_type_5.xib */,
-				04548FF1202D6C6F00BD7A13 /* card_type_4.xib */,
-				04548FF2202D6C6F00BD7A13 /* card_type_1.xib */,
-				04548FF3202D6C6F00BD7A13 /* card_type_3.xib */,
-				04548FF4202D6C6F00BD7A13 /* card_type_2.xib */,
+				04344C2A203C1971006E0088 /* section.xib */,
+				04344C2B203C1971006E0088 /* CardTypeLandscape2.xib */,
+				04344C2C203C1971006E0088 /* CardTypeLandscape3.xib */,
+				04344C2D203C1971006E0088 /* DetailTableCell.xib */,
+				04344C2E203C1971006E0088 /* CardTypeLandscape1.xib */,
+				04344C2F203C1971006E0088 /* banner.xib */,
+				04344C30203C1971006E0088 /* card_type_6.xib */,
+				04344C31203C1971006E0088 /* filler.xib */,
+				04344C32203C1971006E0088 /* card_type_5.xib */,
+				04344C33203C1971006E0088 /* card_type_4.xib */,
+				04344C34203C1971006E0088 /* card_type_1.xib */,
+				04344C35203C1971006E0088 /* card_type_3.xib */,
+				04344C36203C1971006E0088 /* card_type_2.xib */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -201,7 +222,7 @@
 		0489142E20248791007E6102 = {
 			isa = PBXGroup;
 			children = (
-				0489143920248791007E6102 /* wittyfeed_ios_notification_api */,
+				0489143920248791007E6102 /* wittyfeed_ios_api */,
 				0489143820248791007E6102 /* Products */,
 				09ABF8811EE66215921F008A /* Pods */,
 				A8D6AAD99321C2E2078A2D93 /* Frameworks */,
@@ -216,20 +237,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0489143920248791007E6102 /* wittyfeed_ios_notification_api */ = {
+		0489143920248791007E6102 /* wittyfeed_ios_api */ = {
 			isa = PBXGroup;
 			children = (
-				041499EF202C1912002D947D /* wittyfeed_ios_notification_api.entitlements */,
+				04344C09203C1970006E0088 /* SDK */,
+				041499EF202C1912002D947D /* wittyfeed_ios_api.entitlements */,
 				0489143A20248791007E6102 /* AppDelegate.swift */,
 				0489143C20248791007E6102 /* ViewController.swift */,
 				0489143E20248791007E6102 /* Main.storyboard */,
 				0489144120248791007E6102 /* Assets.xcassets */,
 				0489144320248791007E6102 /* LaunchScreen.storyboard */,
-				04548FCB202D6C6F00BD7A13 /* SDK */,
 				0489144620248791007E6102 /* Info.plist */,
 				041499ED202ACEF2002D947D /* GoogleService-Info.plist */,
 			);
-			path = wittyfeed_ios_notification_api;
+			path = wittyfeed_ios_api;
 			sourceTree = "<group>";
 		};
 		09ABF8811EE66215921F008A /* Pods */ = {
@@ -237,6 +258,8 @@
 			children = (
 				3C6DA3464823EBB59C119E19 /* Pods-wittyfeed_ios_notification_api.debug.xcconfig */,
 				851F10F9BD21CDE585B28764 /* Pods-wittyfeed_ios_notification_api.release.xcconfig */,
+				813E9C75D7563E9E700B9AE0 /* Pods-wittyfeed_ios_api.debug.xcconfig */,
+				A4A73436DE9A9D9CD9C48BF9 /* Pods-wittyfeed_ios_api.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -245,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				297E613448F160CB093D5D40 /* Pods_wittyfeed_ios_notification_api.framework */,
+				9DF989753490419EC12A9AF1 /* Pods_wittyfeed_ios_api.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,28 +341,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				0489144520248791007E6102 /* LaunchScreen.storyboard in Resources */,
-				04549011202D6C6F00BD7A13 /* banner.xib in Resources */,
-				0454900F202D6C6F00BD7A13 /* DetailTableCell.xib in Resources */,
-				04549008202D6C6F00BD7A13 /* M2F.xib in Resources */,
-				0454900E202D6C6F00BD7A13 /* CardTypeLandscape3.xib in Resources */,
-				04549013202D6C6F00BD7A13 /* filler.xib in Resources */,
-				04549015202D6C6F00BD7A13 /* card_type_4.xib in Resources */,
-				04549017202D6C6F00BD7A13 /* card_type_3.xib in Resources */,
-				04549012202D6C6F00BD7A13 /* card_type_6.xib in Resources */,
-				04549014202D6C6F00BD7A13 /* card_type_5.xib in Resources */,
-				0454900C202D6C6F00BD7A13 /* section.xib in Resources */,
-				04549004202D6C6F00BD7A13 /* LS2.xib in Resources */,
-				04549018202D6C6F00BD7A13 /* card_type_2.xib in Resources */,
+				04344C4A203C1971006E0088 /* LS2.xib in Resources */,
+				04344C62203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.xib in Resources */,
 				0489144220248791007E6102 /* Assets.xcassets in Resources */,
-				04548FF7202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.xib in Resources */,
-				04549002202D6C6F00BD7A13 /* S2L.xib in Resources */,
-				04549006202D6C6F00BD7A13 /* M2.xib in Resources */,
-				0454900D202D6C6F00BD7A13 /* CardTypeLandscape2.xib in Resources */,
-				04549016202D6C6F00BD7A13 /* card_type_1.xib in Resources */,
-				04549003202D6C6F00BD7A13 /* S3.xib in Resources */,
-				04549010202D6C6F00BD7A13 /* CardTypeLandscape1.xib in Resources */,
+				04344C3B203C1971006E0088 /* WittyFeedSDKNotificationViewController.xib in Resources */,
+				04344C5C203C1971006E0088 /* card_type_5.xib in Resources */,
+				04344C48203C1971006E0088 /* S2L.xib in Resources */,
+				04344C4F203C1971006E0088 /* M2F.xib in Resources */,
+				04344C5E203C1971006E0088 /* card_type_1.xib in Resources */,
+				04344C55203C1971006E0088 /* CardTypeLandscape2.xib in Resources */,
+				04344C58203C1971006E0088 /* CardTypeLandscape1.xib in Resources */,
+				04344C56203C1971006E0088 /* CardTypeLandscape3.xib in Resources */,
+				04344C5A203C1971006E0088 /* card_type_6.xib in Resources */,
+				04344C4C203C1971006E0088 /* M2.xib in Resources */,
+				04344C5F203C1971006E0088 /* card_type_3.xib in Resources */,
+				04344C49203C1971006E0088 /* S3.xib in Resources */,
+				04344C54203C1971006E0088 /* section.xib in Resources */,
+				04344C53203C1971006E0088 /* Info.plist in Resources */,
+				04344C59203C1971006E0088 /* banner.xib in Resources */,
+				04344C60203C1971006E0088 /* card_type_2.xib in Resources */,
 				0489144020248791007E6102 /* Main.storyboard in Resources */,
 				041499EE202ACEF2002D947D /* GoogleService-Info.plist in Resources */,
+				04344C5D203C1971006E0088 /* card_type_4.xib in Resources */,
+				04344C5B203C1971006E0088 /* filler.xib in Resources */,
+				04344C4D203C1971006E0088 /* WittyFeedSDKLoaderCell.xib in Resources */,
+				04344C57203C1971006E0088 /* DetailTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +378,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_notification_api/Pods-wittyfeed_ios_notification_api-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_api/Pods-wittyfeed_ios_api-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -370,7 +397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_notification_api/Pods-wittyfeed_ios_notification_api-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_api/Pods-wittyfeed_ios_api-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0C5188383EE9F8D5181A765 /* [CP] Check Pods Manifest.lock */ = {
@@ -384,7 +411,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wittyfeed_ios_notification_api-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-wittyfeed_ios_api-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -403,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_notification_api/Pods-wittyfeed_ios_notification_api-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wittyfeed_ios_api/Pods-wittyfeed_ios_api-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,24 +441,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				0489143D20248791007E6102 /* ViewController.swift in Sources */,
-				04548FFB202D6C6F00BD7A13 /* UtilsExtensions.swift in Sources */,
-				0454900A202D6C6F00BD7A13 /* M2.swift in Sources */,
-				04548FFA202D6C6F00BD7A13 /* WittyFeedSDKNotificationManager.swift in Sources */,
-				04549000202D6C6F00BD7A13 /* WittyFeedSDKNetworking.swift in Sources */,
-				04548FF8202D6C6F00BD7A13 /* WittyFeedSDKSingleton.swift in Sources */,
-				04549007202D6C6F00BD7A13 /* LS2.swift in Sources */,
-				0454900B202D6C6F00BD7A13 /* M2F.swift in Sources */,
-				04548FF9202D6C6F00BD7A13 /* WittyFeedSDKApiClient.swift in Sources */,
-				04548FF6202D6C6F00BD7A13 /* WittyFeedSDKMain.swift in Sources */,
-				04549005202D6C6F00BD7A13 /* S2L.swift in Sources */,
-				04548FFC202D6C6F00BD7A13 /* Block.swift in Sources */,
-				04548FFD202D6C6F00BD7A13 /* Card.swift in Sources */,
+				04344C4B203C1971006E0088 /* S2L.swift in Sources */,
+				04344C43203C1971006E0088 /* CloudMessage.swift in Sources */,
+				04344C3F203C1971006E0088 /* UtilsExtensions.swift in Sources */,
+				04344C46203C1971006E0088 /* WittyFeedSDKNetworking.swift in Sources */,
+				04344C47203C1971006E0088 /* WittyFeedSDKNotificationViewController.swift in Sources */,
+				04344C3E203C1971006E0088 /* WittyFeedSDKNotificationManager.swift in Sources */,
+				04344C44203C1971006E0088 /* CardFactory.swift in Sources */,
+				04344C40203C1971006E0088 /* WittyFeedSDKWaterfallCollectionVC.swift in Sources */,
+				04344C4E203C1971006E0088 /* LS2.swift in Sources */,
+				04344C3C203C1971006E0088 /* WittyFeedSDKSingleton.swift in Sources */,
+				04344C3D203C1971006E0088 /* WittyFeedSDKApiClient.swift in Sources */,
+				04344C3A203C1971006E0088 /* WittyFeedSDKMain.swift in Sources */,
+				04344C61203C1971006E0088 /* WittyFeedSDKLoaderCell.swift in Sources */,
+				04344C41203C1971006E0088 /* Block.swift in Sources */,
+				04344C45203C1971006E0088 /* captions.swift in Sources */,
 				0489143B20248791007E6102 /* AppDelegate.swift in Sources */,
-				04548FFE202D6C6F00BD7A13 /* CloudMessage.swift in Sources */,
-				04548FFF202D6C6F00BD7A13 /* captions.swift in Sources */,
-				04549009202D6C6F00BD7A13 /* S3.swift in Sources */,
-				04549001202D6C6F00BD7A13 /* WittyFeedSDKNotificationViewController.swift in Sources */,
-				04548FF5202D6C6F00BD7A13 /* WittyFeedSDKGoogleAnalytics.swift in Sources */,
+				04344C39203C1971006E0088 /* WittyFeedSDKGoogleAnalytics.swift in Sources */,
+				04344C50203C1971006E0088 /* S3.swift in Sources */,
+				04344C51203C1971006E0088 /* M2.swift in Sources */,
+				04344C42203C1971006E0088 /* Card.swift in Sources */,
+				04344C52203C1971006E0088 /* M2F.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,13 +598,13 @@
 		};
 		0489144A20248791007E6102 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C6DA3464823EBB59C119E19 /* Pods-wittyfeed_ios_notification_api.debug.xcconfig */;
+			baseConfigurationReference = 813E9C75D7563E9E700B9AE0 /* Pods-wittyfeed_ios_api.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wittyfeed_ios_notification_api/wittyfeed_ios_notification_api.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wittyfeed_ios_api/wittyfeed_ios_api.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BS5T7CWVHT;
-				INFOPLIST_FILE = wittyfeed_ios_notification_api/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/wittyfeed_ios_api/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdk.wittyfeed.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -585,13 +615,13 @@
 		};
 		0489144B20248791007E6102 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 851F10F9BD21CDE585B28764 /* Pods-wittyfeed_ios_notification_api.release.xcconfig */;
+			baseConfigurationReference = A4A73436DE9A9D9CD9C48BF9 /* Pods-wittyfeed_ios_api.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = wittyfeed_ios_notification_api/wittyfeed_ios_notification_api.entitlements;
+				CODE_SIGN_ENTITLEMENTS = wittyfeed_ios_api/wittyfeed_ios_api.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BS5T7CWVHT;
-				INFOPLIST_FILE = wittyfeed_ios_notification_api/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/wittyfeed_ios_api/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sdk.wittyfeed.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";

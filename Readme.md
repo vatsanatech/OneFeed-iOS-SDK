@@ -2,7 +2,7 @@
 
 
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
-[ ![Download](https://img.shields.io/badge/Download-1.2.0-blue.svg)](https://drive.google.com/file/d/1lE82pWEnphwB2YaiJehqSCOrQB6I8eDy/view?usp=sharing)
+[ ![Download](https://img.shields.io/badge/Download-1.3.0-blue.svg)](https://drive.google.com/file/d/1gA4UmGAslArl1mMbjRCPu8ep9-lIRU-8/view?usp=sharing)
 [![License](https://img.shields.io/badge/LICENSE-WittyFeed%20SDK%20License-blue.svg)]()
 
 ## Table Of Contents
@@ -26,18 +26,18 @@ Browse through the example app in this repository to see how the WittyfeediOSApi
 
 ### 1.2. Incorporating the SDK
 
-1. [Download the SDK v1.2.0 Files](https://drive.google.com/file/d/1lE82pWEnphwB2YaiJehqSCOrQB6I8eDy/view?usp=sharing)
+1. [Download the SDK v1.3.0 Files](https://drive.google.com/file/d/1gA4UmGAslArl1mMbjRCPu8ep9-lIRU-8/view?usp=sharing)
 
 2. Add and copy the whole directory "SDK" into your xCode Project or xcWorkSpace,
 
 3. Confirm for the following dependencies in your Podfile
 
 ```groovy
-  Alamofire (4.6.0)
-  SwiftyJSON (4.0.0)
-  Kingfisher (4.6.1)
-  Firebase/Core (4.8.2) // for notification service only
-  Firebase/Messaging (4.8.2)  // for notification service only
+Alamofire (4.6.0)
+SwiftyJSON (4.0.0)
+Kingfisher (4.6.1)
+Firebase/Core (4.8.2) // for notification service only
+Firebase/Messaging (4.8.2)  // for notification service only
 ```
 
 > ## Notice
@@ -50,75 +50,93 @@ Browse through the example app in this repository to see how the WittyfeediOSApi
 
 class MainViewController: UIViewController {
 
-    let APP_ID = "<YOUR_APP_ID>" //App id provided by WF
-    let API_KEY = "<YOUR_API_KEY>" //App access key provided by WF
-    let FCM_TOKEN = "" // FCM TOKEN of the user
+let APP_ID = "<YOUR_APP_ID>" //App id provided by WF
+let API_KEY = "<YOUR_API_KEY>" //App access key provided by WF
+let FCM_TOKEN = "" // FCM TOKEN of the user
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        // ====================
-        // SDK WORK STARTS HERE
-        // ====================
+override func viewDidLoad() {
+super.viewDidLoad()
 
-        //
-        // OPTIONAL to provide basic user_meta.
-        // By providing user_meta your app can receive targeted content which has an higher CPM then regular content.
-        //
-        var user_meta: [String:String] = [:]
 
-        //
-        // WittyFeedSDKGender has following options = "M" for Male, "F" for Female, "O" for Other, "N" for None
-        //
-        user_meta["client_gender"] = "NONE"
+// ====================
+// SDK WORK STARTS HERE
+// ====================
 
-        //
-        // User Interests.
-        // String with a max_length = 100
-        //
-        user_meta["client_interests"] = "love, funny, sad, politics, food, technology, DIY, friendship, hollywood, bollywood, NSFW"
+//
+// OPTIONAL to provide basic user_meta.
+// By providing user_meta your app can receive targeted content which has an higher CPM then regular content.
+//
+var user_meta: [String:String] = [:]
 
-        //
-        // below code is only ***required*** for Initializing Wittyfeed iOS SDK API, -- providing 'user_meta' is optional --
-        //
-        let wittyFeed_api_client = WittyFeedSDKApiClient(apikey: API_KEY, appid: APP_ID, fcmtoken: FCM_TOKEN, usermeta: user_meta, vc: self)
-        let wittyFeed_sdk_main = WittyFeedSDKMain(vc: self, wittyFeedSDKApiClient: wittyFeed_api_client)
+//
+// WittyFeedSDKGender has following options = "M" for Male, "F" for Female, "O" for Other, "N" for None
+//
+user_meta["client_gender"] = "NONE"
 
-        //
-        // set the closure method that works as a callback function when SDK initialzes successfully
-        //
-        wittyFeed_sdk_main.set_sdk_init_main_callback { (status) in
-        if(status == "success"){
-        print("WittyFeed SDK did Initalized Successfully")
-        } else {
-        // SDK Initialization Failed
-        print("SDK init error")
-        }
-        }
+//
+// User Interests.
+// String with a max_length = 100
+//
+user_meta["client_interests"] = "love, funny, sad, politics, food, technology, DIY, friendship, hollywood, bollywood, NSFW"
 
-        //
-        // initializing SDK here (mandatory)
-        //
-        wittyFeed_sdk_main.init_wittyfeed_sdk()
+//
+// below code is only ***required*** for Initializing Wittyfeed iOS SDK API, -- providing 'user_meta' is optional --
+//
+let wittyFeed_api_client = WittyFeedSDKApiClient(apikey: API_KEY, appid: APP_ID, fcmtoken: FCM_TOKEN, usermeta: user_meta, vc: self)
+let wittyFeed_sdk_main = WittyFeedSDKMain(vc: self, wittyFeedSDKApiClient: wittyFeed_api_client)
 
-        //
-        // Fetch fresh feeds from our servers with this method call.
-        // It is not mandatory if only notification feature is desired from the SDK
-        //
-        wittyFeed_sdk_main.prepare_feed();
+//
+// set the closure method that works as a callback function when SDK initialzes successfully
+//
+wittyFeed_sdk_main.set_sdk_init_main_callback { (status) in
+if(status == "success"){
+print("WittyFeed SDK did Initalized Successfully")
+} else {
+// SDK Initialization Failed
+print("SDK init error")
+}
+}
 
-        // ====================
-        // SDK WORK ENDS HERE
-        // ====================
+//
+// initializing SDK here (mandatory)
+//
+wittyFeed_sdk_main.init_wittyfeed_sdk()
 
-    }
-    
+//
+// Fetch fresh feeds from our servers with this method call.
+// It is not mandatory if only notification feature is desired from the SDK
+//
+wittyFeed_sdk_main.prepare_feed();
+
+// ====================
+// SDK WORK ENDS HERE
+// ====================
+
+}
+
 }
 
 ```
 
-### 1.4. For Notifications Service of WittyFeediOSSDK
+### 1.4. For Waterfall Feeds of WittyFeediOSSDK
+
+Only after SDK initialization in step 1.3,
+To utilize and open waterfall feed from SDK, push/present the `WittyFeedSDKWaterfallCollectionVC` ViewController by -
+
+```swift
+// ===============================
+// ==Code to open Waterfall Feed==
+// ===============================
+
+let waterfallCollectionVC = WittyFeedSDKWaterfallCollectionVC(nibName: "WittyFeedSDKWaterfallCollectionVC", bundle: nil)
+self.navigationController?.pushViewController(waterfallCollectionVC, animated: true)
+
+// ===================================
+// ==Code to open Waterfall Feed End==
+// ===================================
+```
+
+### 1.5. For Notifications Service of WittyFeediOSSDK
 
 In your AppDelegate, update your `userNotificationCenter (willPresent..)` and `userNotificationCenter (didRecieve..)` with the code below
 
@@ -127,47 +145,47 @@ In your AppDelegate, update your `userNotificationCenter (willPresent..)` and `u
 @available(iOS 10.0, *)
 func userNotificationCenter(_ center: UNUserNotificationCenter,  willPresent notification: UNNotification, withCompletionHandler   completionHandler: @escaping (_ options:   UNNotificationPresentationOptions) -> Void) {
 
-    // =====================================
-    // SDK WORK FOR NOTIFICATION STARTS HERE
-    // =====================================
-    
-    completionHandler([.alert, .badge, .sound])
-    
-    // ===================================
-    // SDK WORK FOR NOTIFICATION ENDS HERE
-    // ===================================
-    
-    return
+// =====================================
+// SDK WORK FOR NOTIFICATION STARTS HERE
+// =====================================
+
+completionHandler([.alert, .badge, .sound])
+
+// ===================================
+// SDK WORK FOR NOTIFICATION ENDS HERE
+// ===================================
+
+return
 }
 
 @available(iOS 10.0, *)
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    // if you set a member variable in didReceiveRemoteNotification, you  will know if this is from closed or background
-    // print("Handle push from background or closed\(response.notification.request.content.userInfo)")
-    print("Handle push from background or closed")
+// if you set a member variable in didReceiveRemoteNotification, you  will know if this is from closed or background
+// print("Handle push from background or closed\(response.notification.request.content.userInfo)")
+print("Handle push from background or closed")
 
-    // =====================================
-    // SDK WORK FOR NOTIFICATION STARTS HERE
-    // =====================================
+// =====================================
+// SDK WORK FOR NOTIFICATION STARTS HERE
+// =====================================
 
-    //
-    // Parse the data payload in cloud message into an dictionary, we will this dictionary forward into WittyFeedSDK
-    //
-    let payload_data_dict = response.notification.request.content.userInfo as NSDictionary
+//
+// Parse the data payload in cloud message into an dictionary, we will this dictionary forward into WittyFeedSDK
+//
+let payload_data_dict = response.notification.request.content.userInfo as NSDictionary
 
-    //
-    // Create an object of WittyFeedSDKNotificationManager to handle the notifications from Engage9 only
-    // it will not interfere or disrupt your notifications
-    //
-    let notiff_manager = WittyFeedSDKNotificationManager(dict: payload_data_dict, window: self.window!)
-    notiff_manager.handleNotification()
+//
+// Create an object of WittyFeedSDKNotificationManager to handle the notifications from Engage9 only
+// it will not interfere or disrupt your notifications
+//
+let notiff_manager = WittyFeedSDKNotificationManager(dict: payload_data_dict, window: self.window!)
+notiff_manager.handleNotification()
 
-    // ===================================
-    // SDK WORK FOR NOTIFICATION ENDS HERE
-    // ===================================
+// ===================================
+// SDK WORK FOR NOTIFICATION ENDS HERE
+// ===================================
 
-    return
-    }
+return
+}
 }
 ```
 
