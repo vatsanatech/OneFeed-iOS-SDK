@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "OneFeed-iOS-SDK"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "OneFeed-iOS-SDK"
 
   # This description is used to generate tags and improve search results.
@@ -106,7 +106,9 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "OneFeed-iOS-SDK/**/*.{png,xib,xcassets}"
+  s.resource_bundles = {
+    'OneFeed-iOS-SDK' => ['OneFeed-iOS-SDK/**/*.{png,xib,xcassets}']
+  }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
