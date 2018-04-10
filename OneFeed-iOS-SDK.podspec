@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "OneFeed-iOS-SDK"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "OneFeed-iOS-SDK"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "OneFeed-iOS-SDK", "OneFeed-iOS-SDK/**/*.{h,m,swift,xib,xcassets}"
+  s.source_files  = "OneFeed-iOS-SDK", "OneFeed-iOS-SDK/**/*.{h,m,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "OneFeed-iOS-SDK/**/*.{png,xib,xcassets}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
