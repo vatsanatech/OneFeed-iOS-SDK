@@ -15,7 +15,7 @@ public class WittyFeedSDKNotificationManager {
     var notiff_data_dict: NSDictionary!
     var app_window: UIWindow!
     var local_client_fcm: String!
-    var safariDelegate: SFSafariViewControllerDelegate!
+    public var safariDelegate: SFSafariViewControllerDelegate!
     
     public init(dict: NSDictionary, fcm_token: String, window: UIWindow){
         notiff_data_dict = dict
