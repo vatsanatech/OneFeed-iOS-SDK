@@ -223,6 +223,7 @@ public class WittyFeedSDKMain {
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
         let oneFeedCollectionVC = WittyFeedSDKOneFeedCV(nibName: "WittyFeedSDKOneFeedCV", bundle: resourceBundle)
+        oneFeedCollectionVC.navigationItem.hidesBackButton = true
         return oneFeedCollectionVC
     }
     

@@ -27,9 +27,11 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     var searchBar: UISearchBar!
     var SearchActivityView: UIView!
     var resourceBundle: Bundle?
+    var existing_status_bar_style: UIStatusBarStyle?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
@@ -64,6 +66,15 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         
         collectionView?.keyboardDismissMode = .interactive
         collectionView?.keyboardDismissMode = .onDrag
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        existing_status_bar_style = UIApplication.shared.statusBarStyle
+        UIApplication.shared.statusBarStyle = .default
+        
+    }
+    public override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = existing_status_bar_style!
     }
     
     @objc func refresh(sender:AnyObject) {

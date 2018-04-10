@@ -13,9 +13,12 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
     
     var activityIndicator = UIActivityIndicatorView()
     var resourceBundle: Bundle?
+    var existing_status_bar_style: UIStatusBarStyle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.tintColor = .black
         
        let mainView = UIView( frame: CGRect(x: 0, y: 0, width: WittyFeedSDKSingleton.instance.screen_width, height: WittyFeedSDKSingleton.instance.screen_height) )
        
@@ -57,6 +60,15 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
             self.activityIndicator.stopAnimating()
         }
         
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        existing_status_bar_style = UIApplication.shared.statusBarStyle
+        UIApplication.shared.statusBarStyle = .default
+        
+    }
+    public override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = existing_status_bar_style!
     }
     
 
