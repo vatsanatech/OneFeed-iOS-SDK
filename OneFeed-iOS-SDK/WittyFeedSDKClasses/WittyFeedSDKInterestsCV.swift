@@ -22,12 +22,12 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
         activityIndicator.startAnimating()
         collectionView?.backgroundColor = .white
         
-        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let frameworkBundle = Bundle(for: self.classForCoder)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         resourceBundle = Bundle(url: bundleURL!)
         
         if(resourceBundle == nil){
-            resourceBundle = Bundle(for: WittyFeedSDKMain.self)
+            resourceBundle = Bundle(for: self.classForCoder)
         }
         
         collectionView?.register(UINib(nibName: "WittyFeedSDKInterestsCell", bundle: resourceBundle), forCellWithReuseIdentifier: "WittyFeedSDKInterestsCell")
