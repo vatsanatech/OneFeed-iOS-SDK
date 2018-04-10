@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/aishwarydhare/onefeed_temp.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/vatsanatech/OneFeed-iOS-SDK.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
