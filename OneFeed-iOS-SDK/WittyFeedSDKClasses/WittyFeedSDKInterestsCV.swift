@@ -12,6 +12,7 @@ import UIKit
 class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var activityIndicator = UIActivityIndicatorView()
+    var resourceBundle: Bundle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
         
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
+        resourceBundle = Bundle(url: bundleURL!)
         collectionView?.register(UINib(nibName: "WittyFeedSDKInterestsCell", bundle: resourceBundle), forCellWithReuseIdentifier: "WittyFeedSDKInterestsCell")
         // Register cell classes
      
@@ -81,9 +82,9 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
         }
         
         if(isCurrentlySelected){
-            cell?.checkImg.image = #imageLiteral(resourceName: "active")
+            cell?.checkImg.image = UIImage(named: "active", in: resourceBundle!, compatibleWith: nil)
         } else {	
-            cell?.checkImg.image = #imageLiteral(resourceName: "inactive")
+            cell?.checkImg.image = UIImage(named: "inactive", in: resourceBundle!, compatibleWith: nil)
         }
         return cell!
     }
@@ -98,10 +99,10 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
         }
         
         if(isCurrentlySelected){
-            cell.checkImg.image = #imageLiteral(resourceName: "inactive")
+            cell.checkImg.image = UIImage(named: "inactive", in: self.resourceBundle!, compatibleWith: nil)
             card.sheild_text! = ""
         } else {
-            cell.checkImg.image = #imageLiteral(resourceName: "active")
+            cell.checkImg.image = UIImage(named: "active", in: self.resourceBundle!, compatibleWith: nil)
             card.sheild_text! = "selected"
         }
         
@@ -110,10 +111,10 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
                 print("done setting interest")
             } else {
                 if(isCurrentlySelected){
-                    cell.checkImg.image = #imageLiteral(resourceName: "active")
+                    cell.checkImg.image = UIImage(named: "active", in: self.resourceBundle!, compatibleWith: nil)
                     card.sheild_text! = "selected"
                 } else {
-                    cell.checkImg.image = #imageLiteral(resourceName: "inactive")
+                    cell.checkImg.image = UIImage(named: "inactive", in: self.resourceBundle!, compatibleWith: nil)
                     card.sheild_text! = ""
                 }
             }

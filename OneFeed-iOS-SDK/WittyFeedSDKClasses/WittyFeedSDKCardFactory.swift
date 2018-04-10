@@ -33,11 +33,17 @@ public class WittyFeedSDKCardFactory{
     var fixed_height_of_card = 0
     var fixed_top_margin = 0
     
+    var resourceBundle: Bundle?
+    
     
     init(text_size_ratio: Double) {
         self.text_size_ratio = text_size_ratio
         self.fixed_height_of_card = Int(screen_height*0.18)
         self.fixed_top_margin = Int(screen_height*0.03)
+        
+        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
+        resourceBundle = Bundle(url: bundleURL!)
     }
     
     
@@ -331,7 +337,8 @@ public class WittyFeedSDKCardFactory{
         let play_icon = UIImageView(frame: CGRect(x: 0, y: 0, width: c_4, height: c_4))
         play_icon.center = CGPoint(x: cardBaseWidth  / 2,
                                    y: cardBaseHeight / 2 - 20)
-        play_icon.image = #imageLiteral(resourceName: "play-button")
+        
+        play_icon.image = UIImage(named: "play-button", in: self.resourceBundle!, compatibleWith: nil)
         
         
         let font = UIFont(name: "HelveticaNeue", size: 15.0)
@@ -407,7 +414,7 @@ public class WittyFeedSDKCardFactory{
         }
         
         let play_icon = UIImageView(frame: CGRect(x: 10, y: cardBaseHeight * 0.30, width: cardBaseHeight * 0.20, height: cardBaseHeight * 0.20))
-        play_icon.image = #imageLiteral(resourceName: "play-button")
+        play_icon.image = UIImage(named: "play-button", in: self.resourceBundle!, compatibleWith: nil)
         
         let lblTitle = UILabel(frame: CGRect(x: 10, y: cardBaseHeight * 0.50, width: cardBaseWidth - 20, height: cardBaseHeight * 0.50 ))
         lblTitle.text = card.story_title
@@ -434,7 +441,6 @@ public class WittyFeedSDKCardFactory{
         let r_8 = CGFloat(0.25)
         let r_9 = CGFloat(0.5)
         let c_1 = CGFloat(10)
-        let c_2 = CGFloat(15)
         let c_3 = CGFloat(20)
         //        let c_4 = CGFloat(30)
         let c_5 = CGFloat(40)
