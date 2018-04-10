@@ -20,7 +20,8 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
        
         activityIndicator.startAnimating()
         collectionView?.backgroundColor = .white
-        collectionView?.register(UINib(nibName: "WittyFeedSDKInterestsCell", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "WittyFeedSDKInterestsCell")
+        let bundle = Bundle(for: self.classForCoder)
+        collectionView?.register(UINib(nibName: "WittyFeedSDKInterestsCell", bundle: bundle), forCellWithReuseIdentifier: "WittyFeedSDKInterestsCell")
         // Register cell classes
      
 

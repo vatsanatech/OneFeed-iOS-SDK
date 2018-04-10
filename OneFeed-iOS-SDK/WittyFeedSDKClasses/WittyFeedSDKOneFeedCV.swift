@@ -155,13 +155,14 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
     public func registerNibs() {
+        let bundle = Bundle(for: self.classForCoder)
         collectionView?.backgroundColor = .white
-        collectionView?.register(UINib(nibName: "SOLO_POSTER", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "SOLO_POSTER")
-        collectionView?.register(UINib(nibName: "POSTER_CV", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "POSTER_CV")
-        collectionView?.register(UINib(nibName: "SOLO_VIDEO", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "SOLO_VIDEO")
-        collectionView?.register(UINib(nibName: "VIDEO_CV", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "VIDEO_CV")
-        collectionView?.register(UINib(nibName: "STORY_LIST", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "STORY_LIST")
-        collectionView?.register(UINib(nibName: "WittyFeedSDKLoaderCell", bundle: Bundle(identifier: "test.wittyfeed-ios-sdk.wittyfeed-sdk-framework")), forCellWithReuseIdentifier: "WittyFeedSDKLoaderCell")
+        collectionView?.register(UINib(nibName: "SOLO_POSTER", bundle: bundle), forCellWithReuseIdentifier: "SOLO_POSTER")
+        collectionView?.register(UINib(nibName: "POSTER_CV", bundle: bundle), forCellWithReuseIdentifier: "POSTER_CV")
+        collectionView?.register(UINib(nibName: "SOLO_VIDEO", bundle: bundle), forCellWithReuseIdentifier: "SOLO_VIDEO")
+        collectionView?.register(UINib(nibName: "VIDEO_CV", bundle: bundle), forCellWithReuseIdentifier: "VIDEO_CV")
+        collectionView?.register(UINib(nibName: "STORY_LIST", bundle: bundle), forCellWithReuseIdentifier: "STORY_LIST")
+        collectionView?.register(UINib(nibName: "WittyFeedSDKLoaderCell", bundle: bundle), forCellWithReuseIdentifier: "WittyFeedSDKLoaderCell")
     }
     
     override public func didReceiveMemoryWarning() {
