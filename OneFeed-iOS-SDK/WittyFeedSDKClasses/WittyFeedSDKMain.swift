@@ -218,4 +218,12 @@ public class WittyFeedSDKMain {
         }
     }
     
+    public func get_onefeed_view_controller() -> WittyFeedSDKOneFeedCV {
+        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        let oneFeedCollectionVC = WittyFeedSDKOneFeedCV(nibName: "WittyFeedSDKOneFeedCV", bundle: resourceBundle)
+        return oneFeedCollectionVC
+    }
+    
 }

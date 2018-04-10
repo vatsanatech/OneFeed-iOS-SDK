@@ -109,7 +109,10 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
     @IBAction func addAction(_ sender: UIButton) {
-        let interestCollectionVC = WittyFeedSDKInterestsCV(nibName: "WittyFeedSDKInterestsCV", bundle: nil)
+        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
+        let interestCollectionVC = WittyFeedSDKInterestsCV(nibName: "WittyFeedSDKInterestsCV", bundle: resourceBundle)
         self.navigationController?.pushViewController(interestCollectionVC, animated: true)
     }
     
@@ -155,14 +158,16 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
     public func registerNibs() {
-        let bundle = Bundle(for: self.classForCoder)
+        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
+        let resourceBundle = Bundle(url: bundleURL!)
         collectionView?.backgroundColor = .white
-        collectionView?.register(UINib(nibName: "SOLO_POSTER", bundle: bundle), forCellWithReuseIdentifier: "SOLO_POSTER")
-        collectionView?.register(UINib(nibName: "POSTER_CV", bundle: bundle), forCellWithReuseIdentifier: "POSTER_CV")
-        collectionView?.register(UINib(nibName: "SOLO_VIDEO", bundle: bundle), forCellWithReuseIdentifier: "SOLO_VIDEO")
-        collectionView?.register(UINib(nibName: "VIDEO_CV", bundle: bundle), forCellWithReuseIdentifier: "VIDEO_CV")
-        collectionView?.register(UINib(nibName: "STORY_LIST", bundle: bundle), forCellWithReuseIdentifier: "STORY_LIST")
-        collectionView?.register(UINib(nibName: "WittyFeedSDKLoaderCell", bundle: bundle), forCellWithReuseIdentifier: "WittyFeedSDKLoaderCell")
+        collectionView?.register(UINib(nibName: "SOLO_POSTER", bundle: resourceBundle), forCellWithReuseIdentifier: "SOLO_POSTER")
+        collectionView?.register(UINib(nibName: "POSTER_CV", bundle: resourceBundle), forCellWithReuseIdentifier: "POSTER_CV")
+        collectionView?.register(UINib(nibName: "SOLO_VIDEO", bundle: resourceBundle), forCellWithReuseIdentifier: "SOLO_VIDEO")
+        collectionView?.register(UINib(nibName: "VIDEO_CV", bundle: resourceBundle), forCellWithReuseIdentifier: "VIDEO_CV")
+        collectionView?.register(UINib(nibName: "STORY_LIST", bundle: resourceBundle), forCellWithReuseIdentifier: "STORY_LIST")
+        collectionView?.register(UINib(nibName: "WittyFeedSDKLoaderCell", bundle: resourceBundle), forCellWithReuseIdentifier: "WittyFeedSDKLoaderCell")
     }
     
     override public func didReceiveMemoryWarning() {
