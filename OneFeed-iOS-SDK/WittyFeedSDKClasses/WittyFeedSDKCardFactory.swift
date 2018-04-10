@@ -35,7 +35,6 @@ public class WittyFeedSDKCardFactory{
     
     var resourceBundle: Bundle?
     
-    
     init(text_size_ratio: Double) {
         self.text_size_ratio = text_size_ratio
         self.fixed_height_of_card = Int(screen_height*0.18)
@@ -338,6 +337,9 @@ public class WittyFeedSDKCardFactory{
         play_icon.center = CGPoint(x: cardBaseWidth  / 2,
                                    y: cardBaseHeight / 2 - 20)
         
+        if(resourceBundle == nil){
+            resourceBundle = Bundle(for: WittyFeedSDKMain.self)
+        }
         play_icon.image = UIImage(named: "play-button", in: self.resourceBundle!, compatibleWith: nil)
         
         

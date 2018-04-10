@@ -25,6 +25,11 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         resourceBundle = Bundle(url: bundleURL!)
+        
+        if(resourceBundle == nil){
+            resourceBundle = Bundle(for: WittyFeedSDKMain.self)
+        }
+        
         collectionView?.register(UINib(nibName: "WittyFeedSDKInterestsCell", bundle: resourceBundle), forCellWithReuseIdentifier: "WittyFeedSDKInterestsCell")
         // Register cell classes
      
