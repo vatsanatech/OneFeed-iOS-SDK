@@ -26,9 +26,18 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     var is_search_blocks = false
     var searchBar: UISearchBar!
     var SearchActivityView: UIView!
+    var resourceBundle: Bundle?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
+        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
+        resourceBundle = Bundle(url: bundleURL!)
+        
+        if(resourceBundle == nil){
+            resourceBundle = Bundle(for: WittyFeedSDKInterestsCV.self)
+        }
         
         SearchActivityView = UIView( frame: CGRect(x: 0, y: 0, width: WittyFeedSDKSingleton.instance.screen_width, height: WittyFeedSDKSingleton.instance.screen_height) )
         SearchActivityView.backgroundColor = .white
@@ -70,13 +79,13 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     
     func addBackButton() {
         let backButton = UIButton(type: .custom)
-        backButton.setImage(UIImage(named: "BackButton.png"), for: .normal)
+        backButton.setImage(UIImage(named: "BackButton", in: resourceBundle, compatibleWith: nil), for: .normal)
         backButton.frame = CGRect(x: 0, y: 7, width: 30, height: 30)
         backButton.addTarget(self, action: #selector(WittyFeedSDKOneFeedCV.backAction), for: .touchUpInside)
         let item1 = UIBarButtonItem(customView: backButton)
         
         let addButton = UIButton(type: .custom)
-        addButton.setImage(UIImage(named: "plus.png"), for: .normal)
+        addButton.setImage(UIImage(named: "plus", in: resourceBundle, compatibleWith: nil), for: .normal)
         addButton.frame = CGRect(x: 0, y: 7, width: 30, height: 30)
         addButton.addTarget(self, action: #selector(WittyFeedSDKOneFeedCV.addAction), for: .touchUpInside)
         let rightNavBarButton = UIBarButtonItem(customView: addButton)
@@ -158,9 +167,6 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
     public func registerNibs() {
-        let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
         collectionView?.backgroundColor = .white
         collectionView?.register(UINib(nibName: "SOLO_POSTER", bundle: resourceBundle), forCellWithReuseIdentifier: "SOLO_POSTER")
         collectionView?.register(UINib(nibName: "POSTER_CV", bundle: resourceBundle), forCellWithReuseIdentifier: "POSTER_CV")
