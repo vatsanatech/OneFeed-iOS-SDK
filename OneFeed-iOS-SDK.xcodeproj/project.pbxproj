@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		044CDB01207B913900C9EC44 /* OneFeed_iOS_SDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 044CDAFF207B913900C9EC44 /* OneFeed_iOS_SDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		044CDB2D207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB08207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift */; };
+		044CDB2E207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB09207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift */; };
+		044CDB2F207B93C400C9EC44 /* WittyFeedSDKMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0A207B93C400C9EC44 /* WittyFeedSDKMain.swift */; };
+		044CDB30207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0B207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.swift */; };
+		044CDB31207B93C400C9EC44 /* WittyFeedSDKSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0C207B93C400C9EC44 /* WittyFeedSDKSingleton.swift */; };
+		044CDB32207B93C400C9EC44 /* WittyFeedSDKApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0D207B93C400C9EC44 /* WittyFeedSDKApiClient.swift */; };
+		044CDB33207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0E207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift */; };
+		044CDB34207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB0F207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift */; };
+		044CDB35207B93C400C9EC44 /* WittyFeedSDKNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB10207B93C400C9EC44 /* WittyFeedSDKNetworking.swift */; };
+		044CDB36207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB11207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift */; };
+		044CDB37207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB12207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift */; };
+		044CDB38207B93C400C9EC44 /* CardPosterCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB14207B93C400C9EC44 /* CardPosterCV.swift */; };
+		044CDB39207B93C400C9EC44 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB15207B93C400C9EC44 /* Block.swift */; };
+		044CDB3A207B93C400C9EC44 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB16207B93C400C9EC44 /* Meta.swift */; };
+		044CDB3B207B93C400C9EC44 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB17207B93C400C9EC44 /* Card.swift */; };
+		044CDB3C207B93C400C9EC44 /* CloudMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB18207B93C400C9EC44 /* CloudMessage.swift */; };
+		044CDB3D207B93C400C9EC44 /* mCustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB19207B93C400C9EC44 /* mCustomUIView.swift */; };
+		044CDB3E207B93C400C9EC44 /* UtilsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB1B207B93C400C9EC44 /* UtilsExtensions.swift */; };
+		044CDB3F207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB1C207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets */; };
+		044CDB40207B93C400C9EC44 /* VIDEO_CV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB1F207B93C400C9EC44 /* VIDEO_CV.xib */; };
+		044CDB41207B93C400C9EC44 /* SOLO_VIDEO.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB20207B93C400C9EC44 /* SOLO_VIDEO.xib */; };
+		044CDB42207B93C400C9EC44 /* STORY_LIST.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB21207B93C400C9EC44 /* STORY_LIST.xib */; };
+		044CDB43207B93C400C9EC44 /* POSTER_CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB22207B93C400C9EC44 /* POSTER_CV.swift */; };
+		044CDB44207B93C400C9EC44 /* SOLO_VIDEO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB23207B93C400C9EC44 /* SOLO_VIDEO.swift */; };
+		044CDB45207B93C400C9EC44 /* VIDEO_CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB24207B93C400C9EC44 /* VIDEO_CV.swift */; };
+		044CDB46207B93C400C9EC44 /* POSTER_CV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB25207B93C400C9EC44 /* POSTER_CV.xib */; };
+		044CDB47207B93C400C9EC44 /* SOLO_POSTER.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB26207B93C400C9EC44 /* SOLO_POSTER.xib */; };
+		044CDB48207B93C400C9EC44 /* SOLO_POSTER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB27207B93C400C9EC44 /* SOLO_POSTER.swift */; };
+		044CDB49207B93C400C9EC44 /* STORY_LIST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB28207B93C400C9EC44 /* STORY_LIST.swift */; };
+		044CDB4A207B93C400C9EC44 /* WittyFeedSDKInterestsCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB29207B93C400C9EC44 /* WittyFeedSDKInterestsCV.xib */; };
+		044CDB4B207B93C400C9EC44 /* WittyFeedSDKLoaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB2A207B93C400C9EC44 /* WittyFeedSDKLoaderCell.xib */; };
+		044CDB4C207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB2B207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib */; };
+		044CDB4D207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB2C207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib */; };
+		19D93955EDA32FFB5FD064B2 /* Pods_OneFeed_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEE694562F7753353352F0C /* Pods_OneFeed_iOS_SDK.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		044CDAFC207B913900C9EC44 /* OneFeed_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OneFeed_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		044CDAFF207B913900C9EC44 /* OneFeed_iOS_SDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneFeed_iOS_SDK.h; sourceTree = "<group>"; };
+		044CDB00207B913900C9EC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044CDB08207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKGoogleAnalytics.swift; sourceTree = "<group>"; };
+		044CDB09207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKCardFactory.swift; sourceTree = "<group>"; };
+		044CDB0A207B93C400C9EC44 /* WittyFeedSDKMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKMain.swift; sourceTree = "<group>"; };
+		044CDB0B207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKOneFeedCV.swift; sourceTree = "<group>"; };
+		044CDB0C207B93C400C9EC44 /* WittyFeedSDKSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKSingleton.swift; sourceTree = "<group>"; };
+		044CDB0D207B93C400C9EC44 /* WittyFeedSDKApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKApiClient.swift; sourceTree = "<group>"; };
+		044CDB0E207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNotificationManager.swift; sourceTree = "<group>"; };
+		044CDB0F207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKLoaderCell.swift; sourceTree = "<group>"; };
+		044CDB10207B93C400C9EC44 /* WittyFeedSDKNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNetworking.swift; sourceTree = "<group>"; };
+		044CDB11207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKInterestsCell.swift; sourceTree = "<group>"; };
+		044CDB12207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKInterestsCV.swift; sourceTree = "<group>"; };
+		044CDB14207B93C400C9EC44 /* CardPosterCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPosterCV.swift; sourceTree = "<group>"; };
+		044CDB15207B93C400C9EC44 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		044CDB16207B93C400C9EC44 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		044CDB17207B93C400C9EC44 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		044CDB18207B93C400C9EC44 /* CloudMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudMessage.swift; sourceTree = "<group>"; };
+		044CDB19207B93C400C9EC44 /* mCustomUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mCustomUIView.swift; sourceTree = "<group>"; };
+		044CDB1B207B93C400C9EC44 /* UtilsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsExtensions.swift; sourceTree = "<group>"; };
+		044CDB1C207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WittyFeedSDKAssets.xcassets; sourceTree = "<group>"; };
+		044CDB1F207B93C400C9EC44 /* VIDEO_CV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VIDEO_CV.xib; sourceTree = "<group>"; };
+		044CDB20207B93C400C9EC44 /* SOLO_VIDEO.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOLO_VIDEO.xib; sourceTree = "<group>"; };
+		044CDB21207B93C400C9EC44 /* STORY_LIST.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STORY_LIST.xib; sourceTree = "<group>"; };
+		044CDB22207B93C400C9EC44 /* POSTER_CV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POSTER_CV.swift; sourceTree = "<group>"; };
+		044CDB23207B93C400C9EC44 /* SOLO_VIDEO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLO_VIDEO.swift; sourceTree = "<group>"; };
+		044CDB24207B93C400C9EC44 /* VIDEO_CV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIDEO_CV.swift; sourceTree = "<group>"; };
+		044CDB25207B93C400C9EC44 /* POSTER_CV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POSTER_CV.xib; sourceTree = "<group>"; };
+		044CDB26207B93C400C9EC44 /* SOLO_POSTER.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SOLO_POSTER.xib; sourceTree = "<group>"; };
+		044CDB27207B93C400C9EC44 /* SOLO_POSTER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOLO_POSTER.swift; sourceTree = "<group>"; };
+		044CDB28207B93C400C9EC44 /* STORY_LIST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STORY_LIST.swift; sourceTree = "<group>"; };
+		044CDB29207B93C400C9EC44 /* WittyFeedSDKInterestsCV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKInterestsCV.xib; sourceTree = "<group>"; };
+		044CDB2A207B93C400C9EC44 /* WittyFeedSDKLoaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKLoaderCell.xib; sourceTree = "<group>"; };
+		044CDB2B207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKInterestsCell.xib; sourceTree = "<group>"; };
+		044CDB2C207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKOneFeedCV.xib; sourceTree = "<group>"; };
+		1AEE694562F7753353352F0C /* Pods_OneFeed_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneFeed_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE49B4B10DD80C522F913CA6 /* Pods-OneFeed-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneFeed-iOS-SDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneFeed-iOS-SDK/Pods-OneFeed-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		F1463D6E770593AB86A79FCC /* Pods-OneFeed-iOS-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneFeed-iOS-SDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneFeed-iOS-SDK/Pods-OneFeed-iOS-SDK.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		044CDAF8207B913900C9EC44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19D93955EDA32FFB5FD064B2 /* Pods_OneFeed_iOS_SDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		044CDAF2207B913900C9EC44 = {
+			isa = PBXGroup;
+			children = (
+				044CDAFE207B913900C9EC44 /* OneFeed-iOS-SDK */,
+				044CDAFD207B913900C9EC44 /* Products */,
+				43C589E115C4EE90E668895F /* Pods */,
+				C6B7818F14737A48C1AAE167 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		044CDAFD207B913900C9EC44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				044CDAFC207B913900C9EC44 /* OneFeed_iOS_SDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		044CDAFE207B913900C9EC44 /* OneFeed-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB13207B93C400C9EC44 /* Model */,
+				044CDB1A207B93C400C9EC44 /* Utils */,
+				044CDB1D207B93C400C9EC44 /* Views */,
+				044CDB1C207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets */,
+				044CDB07207B93C400C9EC44 /* WittyFeedSDKClasses */,
+				044CDAFF207B913900C9EC44 /* OneFeed_iOS_SDK.h */,
+				044CDB00207B913900C9EC44 /* Info.plist */,
+			);
+			path = "OneFeed-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		044CDB07207B93C400C9EC44 /* WittyFeedSDKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB08207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift */,
+				044CDB09207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift */,
+				044CDB0A207B93C400C9EC44 /* WittyFeedSDKMain.swift */,
+				044CDB0B207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.swift */,
+				044CDB0C207B93C400C9EC44 /* WittyFeedSDKSingleton.swift */,
+				044CDB0D207B93C400C9EC44 /* WittyFeedSDKApiClient.swift */,
+				044CDB0E207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift */,
+				044CDB0F207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift */,
+				044CDB10207B93C400C9EC44 /* WittyFeedSDKNetworking.swift */,
+				044CDB11207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift */,
+				044CDB12207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift */,
+			);
+			path = WittyFeedSDKClasses;
+			sourceTree = "<group>";
+		};
+		044CDB13207B93C400C9EC44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB14207B93C400C9EC44 /* CardPosterCV.swift */,
+				044CDB15207B93C400C9EC44 /* Block.swift */,
+				044CDB16207B93C400C9EC44 /* Meta.swift */,
+				044CDB17207B93C400C9EC44 /* Card.swift */,
+				044CDB18207B93C400C9EC44 /* CloudMessage.swift */,
+				044CDB19207B93C400C9EC44 /* mCustomUIView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044CDB1A207B93C400C9EC44 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB1B207B93C400C9EC44 /* UtilsExtensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		044CDB1D207B93C400C9EC44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB1E207B93C400C9EC44 /* Blocks */,
+				044CDB29207B93C400C9EC44 /* WittyFeedSDKInterestsCV.xib */,
+				044CDB2A207B93C400C9EC44 /* WittyFeedSDKLoaderCell.xib */,
+				044CDB2B207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib */,
+				044CDB2C207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		044CDB1E207B93C400C9EC44 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				044CDB1F207B93C400C9EC44 /* VIDEO_CV.xib */,
+				044CDB20207B93C400C9EC44 /* SOLO_VIDEO.xib */,
+				044CDB21207B93C400C9EC44 /* STORY_LIST.xib */,
+				044CDB25207B93C400C9EC44 /* POSTER_CV.xib */,
+				044CDB26207B93C400C9EC44 /* SOLO_POSTER.xib */,
+				044CDB22207B93C400C9EC44 /* POSTER_CV.swift */,
+				044CDB23207B93C400C9EC44 /* SOLO_VIDEO.swift */,
+				044CDB24207B93C400C9EC44 /* VIDEO_CV.swift */,
+				044CDB27207B93C400C9EC44 /* SOLO_POSTER.swift */,
+				044CDB28207B93C400C9EC44 /* STORY_LIST.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		43C589E115C4EE90E668895F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1463D6E770593AB86A79FCC /* Pods-OneFeed-iOS-SDK.debug.xcconfig */,
+				BE49B4B10DD80C522F913CA6 /* Pods-OneFeed-iOS-SDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6B7818F14737A48C1AAE167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AEE694562F7753353352F0C /* Pods_OneFeed_iOS_SDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		044CDAF9207B913900C9EC44 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CDB01207B913900C9EC44 /* OneFeed_iOS_SDK.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		044CDAFB207B913900C9EC44 /* OneFeed-iOS-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044CDB04207B913900C9EC44 /* Build configuration list for PBXNativeTarget "OneFeed-iOS-SDK" */;
+			buildPhases = (
+				214D5A2D04E02E1DC32BB82E /* [CP] Check Pods Manifest.lock */,
+				044CDAF7207B913900C9EC44 /* Sources */,
+				044CDAF8207B913900C9EC44 /* Frameworks */,
+				044CDAF9207B913900C9EC44 /* Headers */,
+				044CDAFA207B913900C9EC44 /* Resources */,
+				C2159EAAA0DBA6CDC1FFA20B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OneFeed-iOS-SDK";
+			productName = "OneFeed-iOS-SDK";
+			productReference = 044CDAFC207B913900C9EC44 /* OneFeed_iOS_SDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		044CDAF3207B913900C9EC44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Vatsana Technologies Pvt. Ltd.";
+				TargetAttributes = {
+					044CDAFB207B913900C9EC44 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 044CDAF6207B913900C9EC44 /* Build configuration list for PBXProject "OneFeed-iOS-SDK" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 044CDAF2207B913900C9EC44;
+			productRefGroup = 044CDAFD207B913900C9EC44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				044CDAFB207B913900C9EC44 /* OneFeed-iOS-SDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		044CDAFA207B913900C9EC44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CDB40207B93C400C9EC44 /* VIDEO_CV.xib in Resources */,
+				044CDB4B207B93C400C9EC44 /* WittyFeedSDKLoaderCell.xib in Resources */,
+				044CDB4D207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib in Resources */,
+				044CDB41207B93C400C9EC44 /* SOLO_VIDEO.xib in Resources */,
+				044CDB4A207B93C400C9EC44 /* WittyFeedSDKInterestsCV.xib in Resources */,
+				044CDB46207B93C400C9EC44 /* POSTER_CV.xib in Resources */,
+				044CDB3F207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets in Resources */,
+				044CDB4C207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib in Resources */,
+				044CDB42207B93C400C9EC44 /* STORY_LIST.xib in Resources */,
+				044CDB47207B93C400C9EC44 /* SOLO_POSTER.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		214D5A2D04E02E1DC32BB82E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneFeed-iOS-SDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2159EAAA0DBA6CDC1FFA20B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneFeed-iOS-SDK/Pods-OneFeed-iOS-SDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		044CDAF7207B913900C9EC44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044CDB45207B93C400C9EC44 /* VIDEO_CV.swift in Sources */,
+				044CDB48207B93C400C9EC44 /* SOLO_POSTER.swift in Sources */,
+				044CDB36207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift in Sources */,
+				044CDB30207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.swift in Sources */,
+				044CDB39207B93C400C9EC44 /* Block.swift in Sources */,
+				044CDB49207B93C400C9EC44 /* STORY_LIST.swift in Sources */,
+				044CDB33207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift in Sources */,
+				044CDB37207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift in Sources */,
+				044CDB31207B93C400C9EC44 /* WittyFeedSDKSingleton.swift in Sources */,
+				044CDB35207B93C400C9EC44 /* WittyFeedSDKNetworking.swift in Sources */,
+				044CDB3E207B93C400C9EC44 /* UtilsExtensions.swift in Sources */,
+				044CDB3B207B93C400C9EC44 /* Card.swift in Sources */,
+				044CDB32207B93C400C9EC44 /* WittyFeedSDKApiClient.swift in Sources */,
+				044CDB44207B93C400C9EC44 /* SOLO_VIDEO.swift in Sources */,
+				044CDB3D207B93C400C9EC44 /* mCustomUIView.swift in Sources */,
+				044CDB3C207B93C400C9EC44 /* CloudMessage.swift in Sources */,
+				044CDB43207B93C400C9EC44 /* POSTER_CV.swift in Sources */,
+				044CDB2D207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift in Sources */,
+				044CDB34207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift in Sources */,
+				044CDB38207B93C400C9EC44 /* CardPosterCV.swift in Sources */,
+				044CDB2E207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift in Sources */,
+				044CDB3A207B93C400C9EC44 /* Meta.swift in Sources */,
+				044CDB2F207B93C400C9EC44 /* WittyFeedSDKMain.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		044CDB02207B913900C9EC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		044CDB03207B913900C9EC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		044CDB05207B913900C9EC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1463D6E770593AB86A79FCC /* Pods-OneFeed-iOS-SDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BS5T7CWVHT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "OneFeed-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.onefeed.OneFeed-iOS-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		044CDB06207B913900C9EC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE49B4B10DD80C522F913CA6 /* Pods-OneFeed-iOS-SDK.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BS5T7CWVHT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "OneFeed-iOS-SDK/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.onefeed.OneFeed-iOS-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		044CDAF6207B913900C9EC44 /* Build configuration list for PBXProject "OneFeed-iOS-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CDB02207B913900C9EC44 /* Debug */,
+				044CDB03207B913900C9EC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044CDB04207B913900C9EC44 /* Build configuration list for PBXNativeTarget "OneFeed-iOS-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044CDB05207B913900C9EC44 /* Debug */,
+				044CDB06207B913900C9EC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 044CDAF3207B913900C9EC44 /* Project object */;
+}

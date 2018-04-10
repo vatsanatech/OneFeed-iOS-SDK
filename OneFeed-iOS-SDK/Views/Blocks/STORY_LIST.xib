@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="STORY_LIST" id="gTV-IL-0wX" customClass="STORY_LIST" customModule="wittyfeed_ios_api" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="454" height="216"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="454" height="216"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-nb-KhO">
+                        <rect key="frame" x="0.0" y="0.0" width="454" height="216"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Ilt-nb-KhO" secondAttribute="bottom" id="3N0-yI-dhP"/>
+                <constraint firstItem="Ilt-nb-KhO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Q1E-mE-BC1"/>
+                <constraint firstItem="Ilt-nb-KhO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WRg-08-p9A"/>
+                <constraint firstAttribute="trailing" secondItem="Ilt-nb-KhO" secondAttribute="trailing" id="fWp-Z4-8e6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="459" height="224"/>
+            <connections>
+                <outlet property="story_list_view" destination="Ilt-nb-KhO" id="UQX-rC-o4d"/>
+            </connections>
+            <point key="canvasLocation" x="14" y="2"/>
+        </collectionViewCell>
+    </objects>
+</document>
