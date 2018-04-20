@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "OneFeed-iOS-SDK"
   s.version      = "1.0.12"
+
   s.summary      = "OneFeed-iOS-SDK"
 
   # This description is used to generate tags and improve search results.

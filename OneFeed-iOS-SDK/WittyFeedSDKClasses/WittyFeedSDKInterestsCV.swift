@@ -17,6 +17,12 @@ class WittyFeedSDKInterestsCV: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+	self.extendedLayoutIncludesOpaqueBars = true
+        self.navigationController?.navigationBar.tintColor = .black
+        let title = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
+        title.text = "Tell Your Interests"
+        navigationItem.titleView = title
         
         self.navigationController?.navigationBar.tintColor = .black
         
