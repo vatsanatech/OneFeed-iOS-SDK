@@ -15,31 +15,26 @@ public class WittyFeedSDKCardFactory{
     
     // Item will be put into shortest column.
     var text_size_ratio = 1.0
-    
     var vc_context: UIViewController!
-    
     var screen_height = WittyFeedSDKSingleton.instance.screen_height
     var screen_width = WittyFeedSDKSingleton.instance.screen_width
-    
     var POSTER_SOLO_HW_RATIO = CGFloat(1)
     var POSTER_RV_HW_RATIO = CGFloat(0.8)
     var VIDEO_SOLO_HW_RATIO = CGFloat(1.1)
     var VIDEO_RV_HW_RATIO = CGFloat(0.7)
     var STORY_LIST_HW_RATIO = CGFloat(0.35)
-    
     var safariDelegate: SFSafariViewControllerDelegate!
     
     // used for story list card's size calculation
     var fixed_height_of_card = 0
+    var fixed_width_of_card = 0
     var fixed_top_margin = 0
-    
     var resourceBundle: Bundle?
     
     init(text_size_ratio: Double) {
         self.text_size_ratio = text_size_ratio
         self.fixed_height_of_card = Int(screen_height*0.18)
         self.fixed_top_margin = Int(screen_height*0.03)
-        
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         resourceBundle = Bundle(url: bundleURL!)
@@ -65,6 +60,10 @@ public class WittyFeedSDKCardFactory{
         case "story_list":
             size_to_return = CGSize(width: screen_width, height: (screen_width * STORY_LIST_HW_RATIO))
             break
+        case "collection_1_4":
+            size_to_return = CGSize(width: screen_width, height: (screen_width * STORY_LIST_HW_RATIO))
+            break
+            
         default:
             break;
         }
@@ -76,14 +75,14 @@ public class WittyFeedSDKCardFactory{
         let total_sv_height = Float( Float(( (fixed_top_margin+fixed_height_of_card) * Int(story_list_count)) ) - Float(fixed_top_margin))
         return CGSize(width: screen_width, height: CGFloat(total_sv_height) )
     }
-
+    
     
     func create_single_card(card: Card, card_type: String) -> UIView {
         var m_card_type = card.card_type!
         if(m_card_type == ""){
             m_card_type = card_type
         }
-
+        
         var card_to_return: mCustomUIView!
         
         switch (card_type){
@@ -102,6 +101,7 @@ public class WittyFeedSDKCardFactory{
         case "story_list_item":
             card_to_return = create_story_list_item_card(card: card)
             break
+            
         default:
             break;
         }
@@ -109,7 +109,7 @@ public class WittyFeedSDKCardFactory{
         card_to_return.url_to_open = card.story_url!
         
         card_to_return!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:)) ))
-    
+        
         return card_to_return
     }
     
@@ -126,6 +126,9 @@ public class WittyFeedSDKCardFactory{
         case "story_list":
             card_to_return = create_story_list(cardArrayList: cards)
             break
+        case "collection_1_4":
+            card_to_return = create_collection1_4(cardArrayList: cards)
+            break
         default:
             break
         }
@@ -141,24 +144,18 @@ public class WittyFeedSDKCardFactory{
         self.vc_context.present(controller, animated: true, completion: nil)
         controller.delegate = safariDelegate!
     }
-
+    
     
     public func create_poster_solo_card(card: Card) -> mCustomUIView {
         let mainView = mCustomUIView( frame: CGRect(x: 0, y: 0, width: screen_width, height: CGFloat(screen_width * POSTER_SOLO_HW_RATIO)) )
-       
+        
         let cardBaseHeight = mainView.frame.size.height
         let cardBaseWidth = mainView.frame.size.width
         
         let r_1 = CGFloat(0.40)
         let r_2 = CGFloat(0.48)
         let r_3 = CGFloat(0.60)
-//        let r_4 = CGFloat(0.20)
-//        let r_5 = CGFloat(0.80)
-//        let r_6 = CGFloat(0.82)
-//        let r_7 = CGFloat(0.07)
-//        let r_8 = CGFloat(18.0)
         let r_9 = CGFloat(0.16)
-//        let r_10 = CGFloat(0.88)
         
         let c_1 = CGFloat(10.0)
         let c_2 = CGFloat(20.0)
@@ -185,7 +182,7 @@ public class WittyFeedSDKCardFactory{
         lblCatName.layer.masksToBounds = true
         lblCatName.font = UIFont(name: "HelveticaNeue", size: 15.0)
         lblCatName.textColor = .white
-
+        
         let lblTitle = UILabel(frame: CGRect(x: c_1, y: cardBaseHeight * r_3, width: cardBaseWidth - c_2, height: cardBaseHeight * 0.25 ))
         lblTitle.text = card.story_title
         lblTitle.numberOfLines = 2
@@ -215,14 +212,13 @@ public class WittyFeedSDKCardFactory{
         authName.numberOfLines = 1
         authName.textColor = .lightGray
         authName.font = UIFont(name: "HelveticaNeue", size: 14.0)
-      
         mainView.addSubview(imgCover)
         mainView.addSubview(lblTitle)
         mainView.addSubview(logo_img)
         mainView.addSubview(publisher_name)
         mainView.addSubview(authName)
         mainView.addSubview(lblCatName)
-       
+        
         return mainView
     }
     
@@ -232,17 +228,11 @@ public class WittyFeedSDKCardFactory{
         
         let cardBaseHeight = mainView.frame.size.height
         let cardBaseWidth = mainView.frame.size.width
- 
+        
         let r_1 = CGFloat(0.40)
         let r_2 = CGFloat(0.48)
         let r_3 = CGFloat(0.60)
-        //        let r_4 = CGFloat(0.20)
-        //        let r_5 = CGFloat(0.80)
-        //        let r_6 = CGFloat(0.82)
-        //        let r_7 = CGFloat(0.07)
-        //        let r_8 = CGFloat(18.0)
         let r_9 = CGFloat(0.16)
-        //        let r_10 = CGFloat(0.88)
         let c_1 = CGFloat(10.0)
         let c_2 = CGFloat(20.0)
         let c_3 = CGFloat(30.0)
@@ -433,10 +423,8 @@ public class WittyFeedSDKCardFactory{
     
     public func create_story_list_item_card(card: Card) -> mCustomUIView {
         let mainView = mCustomUIView( frame: CGRect(x: 0, y: 0, width: screen_width, height: CGFloat(screen_width * STORY_LIST_HW_RATIO)) )
-        
         let cardBaseHeight = mainView.frame.size.height
         let cardBaseWidth = mainView.frame.size.width
-        
         let r_1 = CGFloat(0.35)
         let r_3 = CGFloat(0.58)
         let r_5 = CGFloat(0.17)
@@ -444,7 +432,6 @@ public class WittyFeedSDKCardFactory{
         let r_9 = CGFloat(0.5)
         let c_1 = CGFloat(10)
         let c_3 = CGFloat(20)
-        //        let c_4 = CGFloat(30)
         let c_5 = CGFloat(40)
         
         let imgCover = UIImageView(frame: CGRect(
@@ -505,11 +492,10 @@ public class WittyFeedSDKCardFactory{
             height: cardBaseHeight * 0.66 * r_5 )
         )
         publisher_name.text = card.publisher_name
-
         publisher_name.font = UIFont(name: "HelveticaNeue-Medium", size: 12.0)
         publisher_name.numberOfLines = 1
         publisher_name.textColor = .black
-
+        
         if (card.cover_image) != nil{
             let url_string = card.cover_image
             let url = URL(string: url_string!)
@@ -529,7 +515,6 @@ public class WittyFeedSDKCardFactory{
         authName.numberOfLines = 1
         authName.textColor = .lightGray
         authName.font = UIFont(name: "HelveticaNeue", size: 12.0)
-        
         mainView.addSubview(lblTitle)
         mainView.addSubview(logo_img)
         mainView.addSubview(publisher_name)
@@ -565,10 +550,8 @@ public class WittyFeedSDKCardFactory{
             
             let childView = create_single_card(card: cardArrayList[i], card_type: "poster_small_solo")
             card_view.addSubview(childView)
-            
             scrollView.addSubview(card_view!)
             cardOffset_in_sv += fixed_width_of_card+fixed_left_margin
-            
             card_view.bringSubview(toFront: childView)
         }
         return scrollView
@@ -603,12 +586,101 @@ public class WittyFeedSDKCardFactory{
             }
             
             card_view.addSubview(create_single_card(card: cardArrayList[i], card_type: "video_small_solo"))
-            
             scrollView.addSubview(card_view!)
             cardOffset_in_sv += fixed_width_of_card+fixed_left_margin
         }
         
         return scrollView
+    }
+    
+    func create_collection1_4(cardArrayList: [Card]) -> UIView {
+        
+        let x_m = CGFloat(2.5) // fixed margin for left-right
+        let container_view = UIView(frame: CGRect(x: x_m*2, y: 0, width: CGFloat(screen_width-(x_m*4)), height: CGFloat(screen_width)))
+        let first_card_width = CGFloat( (container_view.frame.size.width/2) )
+        let half_card_width =  CGFloat( (first_card_width) - (x_m*2) )
+        let half_card_x =  CGFloat(first_card_width + x_m)
+        let small_cards_width_r = CGFloat( (half_card_width/2))
+        
+        for i in 0 ..< cardArrayList.count {
+            let card_data = cardArrayList[i]
+            let card_view: mCustomUIView!
+            if(i == 0){
+                card_view = mCustomUIView(frame: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: first_card_width,
+                    height: first_card_width-x_m)
+                )
+            } else if(i == 1) {
+                card_view = mCustomUIView(frame: CGRect(
+                    x: half_card_x,
+                    y: 0,
+                    width: small_cards_width_r,
+                    height: small_cards_width_r)
+                )
+            } else if(i == 2) {
+                card_view = mCustomUIView(frame: CGRect(
+                    x: (half_card_x+small_cards_width_r+x_m),
+                    y: 0,
+                    width: small_cards_width_r,
+                    height: small_cards_width_r )
+                )
+            } else if(i == 3) {
+                card_view = mCustomUIView(frame: CGRect(
+                    x: half_card_x,
+                    y: small_cards_width_r+x_m,
+                    width: small_cards_width_r,
+                    height: small_cards_width_r)
+                )
+            } else {
+                card_view = mCustomUIView(frame: CGRect(
+                    x: (half_card_x+small_cards_width_r+x_m),
+                    y: small_cards_width_r+x_m,
+                    width: small_cards_width_r,
+                    height: small_cards_width_r )
+                )
+            }
+            
+            card_view.url_to_open = card_data.story_url!
+            card_view!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:)) ))
+            
+            let imgCover = UIImageView(frame: CGRect(
+                x: 0,
+                y: 0,
+                width: card_view.frame.size.width,
+                height: card_view.frame.size.height)
+            )
+            imgCover.backgroundColor = .lightGray
+            
+            let font = UIFont(name: "HelveticaNeue", size: 10.0)
+            let string = card_data.sheild_text
+            let heightStr = string?.width(withConstrainedHeight: card_view.frame.size.height * 0.15, font: font!)
+            let lblTitle = UILabel(frame: CGRect(
+                x: card_view.frame.size.width * 0.1,
+                y: card_view.frame.size.height-60,
+                width: card_view.frame.size.width - 10,
+                height: 80)
+            )
+            lblTitle.text = card_data.story_title
+            lblTitle.numberOfLines = 1
+            lblTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 14.0)
+            lblTitle.textColor = .white
+            
+            if (card_data.cover_image) != nil{
+                let url_string = card_data.cover_image
+                let url = URL(string: url_string!)
+                imgCover.kf.setImage(with: url)
+                imgCover.contentMode = .scaleAspectFill
+                imgCover.clipsToBounds = true
+            }
+            imgCover.addSubview(lblTitle)
+            card_view.addSubview(imgCover)
+            
+            container_view.addSubview(card_view!)
+        }
+        
+        return container_view
     }
     
     
@@ -639,3 +711,4 @@ public class WittyFeedSDKCardFactory{
     }
     
 }
+

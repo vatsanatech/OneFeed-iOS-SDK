@@ -19,7 +19,6 @@
 		044CDB35207B93C400C9EC44 /* WittyFeedSDKNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB10207B93C400C9EC44 /* WittyFeedSDKNetworking.swift */; };
 		044CDB36207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB11207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift */; };
 		044CDB37207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB12207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift */; };
-		044CDB38207B93C400C9EC44 /* CardPosterCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB14207B93C400C9EC44 /* CardPosterCV.swift */; };
 		044CDB39207B93C400C9EC44 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB15207B93C400C9EC44 /* Block.swift */; };
 		044CDB3A207B93C400C9EC44 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB16207B93C400C9EC44 /* Meta.swift */; };
 		044CDB3B207B93C400C9EC44 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CDB17207B93C400C9EC44 /* Card.swift */; };
@@ -42,6 +41,8 @@
 		044CDB4C207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB2B207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib */; };
 		044CDB4D207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CDB2C207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib */; };
 		19D93955EDA32FFB5FD064B2 /* Pods_OneFeed_iOS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AEE694562F7753353352F0C /* Pods_OneFeed_iOS_SDK.framework */; };
+		4ABA5393208A088B003F7897 /* CollectionView1_4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ABA5391208A0889003F7897 /* CollectionView1_4.xib */; };
+		4ABA5394208A088B003F7897 /* CollectionView1_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABA5392208A088A003F7897 /* CollectionView1_4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +60,6 @@
 		044CDB10207B93C400C9EC44 /* WittyFeedSDKNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKNetworking.swift; sourceTree = "<group>"; };
 		044CDB11207B93C400C9EC44 /* WittyFeedSDKInterestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKInterestsCell.swift; sourceTree = "<group>"; };
 		044CDB12207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WittyFeedSDKInterestsCV.swift; sourceTree = "<group>"; };
-		044CDB14207B93C400C9EC44 /* CardPosterCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPosterCV.swift; sourceTree = "<group>"; };
 		044CDB15207B93C400C9EC44 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		044CDB16207B93C400C9EC44 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		044CDB17207B93C400C9EC44 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		044CDB2B207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKInterestsCell.xib; sourceTree = "<group>"; };
 		044CDB2C207B93C400C9EC44 /* WittyFeedSDKOneFeedCV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WittyFeedSDKOneFeedCV.xib; sourceTree = "<group>"; };
 		1AEE694562F7753353352F0C /* Pods_OneFeed_iOS_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneFeed_iOS_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ABA5391208A0889003F7897 /* CollectionView1_4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionView1_4.xib; sourceTree = "<group>"; };
+		4ABA5392208A088A003F7897 /* CollectionView1_4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView1_4.swift; sourceTree = "<group>"; };
 		BE49B4B10DD80C522F913CA6 /* Pods-OneFeed-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneFeed-iOS-SDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneFeed-iOS-SDK/Pods-OneFeed-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		F1463D6E770593AB86A79FCC /* Pods-OneFeed-iOS-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneFeed-iOS-SDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneFeed-iOS-SDK/Pods-OneFeed-iOS-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +153,6 @@
 		044CDB13207B93C400C9EC44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				044CDB14207B93C400C9EC44 /* CardPosterCV.swift */,
 				044CDB15207B93C400C9EC44 /* Block.swift */,
 				044CDB16207B93C400C9EC44 /* Meta.swift */,
 				044CDB17207B93C400C9EC44 /* Card.swift */,
@@ -189,10 +190,12 @@
 				044CDB21207B93C400C9EC44 /* STORY_LIST.xib */,
 				044CDB25207B93C400C9EC44 /* POSTER_CV.xib */,
 				044CDB26207B93C400C9EC44 /* SOLO_POSTER.xib */,
+				4ABA5391208A0889003F7897 /* CollectionView1_4.xib */,
 				044CDB22207B93C400C9EC44 /* POSTER_CV.swift */,
 				044CDB23207B93C400C9EC44 /* SOLO_VIDEO.swift */,
 				044CDB24207B93C400C9EC44 /* VIDEO_CV.swift */,
 				044CDB27207B93C400C9EC44 /* SOLO_POSTER.swift */,
+				4ABA5392208A088A003F7897 /* CollectionView1_4.swift */,
 				044CDB28207B93C400C9EC44 /* STORY_LIST.swift */,
 			);
 			path = Blocks;
@@ -294,6 +297,7 @@
 				044CDB46207B93C400C9EC44 /* POSTER_CV.xib in Resources */,
 				044CDB3F207B93C400C9EC44 /* WittyFeedSDKAssets.xcassets in Resources */,
 				044CDB4C207B93C400C9EC44 /* WittyFeedSDKInterestsCell.xib in Resources */,
+				4ABA5393208A088B003F7897 /* CollectionView1_4.xib in Resources */,
 				044CDB42207B93C400C9EC44 /* STORY_LIST.xib in Resources */,
 				044CDB47207B93C400C9EC44 /* SOLO_POSTER.xib in Resources */,
 			);
@@ -349,6 +353,7 @@
 				044CDB39207B93C400C9EC44 /* Block.swift in Sources */,
 				044CDB49207B93C400C9EC44 /* STORY_LIST.swift in Sources */,
 				044CDB33207B93C400C9EC44 /* WittyFeedSDKNotificationManager.swift in Sources */,
+				4ABA5394208A088B003F7897 /* CollectionView1_4.swift in Sources */,
 				044CDB37207B93C400C9EC44 /* WittyFeedSDKInterestsCV.swift in Sources */,
 				044CDB31207B93C400C9EC44 /* WittyFeedSDKSingleton.swift in Sources */,
 				044CDB35207B93C400C9EC44 /* WittyFeedSDKNetworking.swift in Sources */,
@@ -361,7 +366,6 @@
 				044CDB43207B93C400C9EC44 /* POSTER_CV.swift in Sources */,
 				044CDB2D207B93C400C9EC44 /* WittyFeedSDKGoogleAnalytics.swift in Sources */,
 				044CDB34207B93C400C9EC44 /* WittyFeedSDKLoaderCell.swift in Sources */,
-				044CDB38207B93C400C9EC44 /* CardPosterCV.swift in Sources */,
 				044CDB2E207B93C400C9EC44 /* WittyFeedSDKCardFactory.swift in Sources */,
 				044CDB3A207B93C400C9EC44 /* Meta.swift in Sources */,
 				044CDB2F207B93C400C9EC44 /* WittyFeedSDKMain.swift in Sources */,

@@ -24,7 +24,6 @@ public class WittyFeedSDKMain {
         WittyFeedSDKSingleton.instance.wittyFeed_sdk_main = self
     }
     
-    
     //
     //MARK: Package Private Methods
     //
@@ -83,18 +82,18 @@ public class WittyFeedSDKMain {
         }, interest_id: interest_id, isSelected: isSelected)
     }
     
-    
     //
     //MARK: Private Methods
     //
     func handle_feeds_result(jsonStr: String, isLoadedMore: Bool, isBackgroundRefresh: Bool, isCached: Bool){
+        
         let block_json_arr = JSON.init(parseJSON: jsonStr)["data"]["blocks"].arrayValue
+        self.handle_search_block_data_result(jsonString: jsonStr)
         WittyFeedSDKSingleton.instance.user_id = JSON.init(parseJSON: jsonStr)["data"]["config"]["user_id"].string!
         print("user id")
         print(WittyFeedSDKSingleton.instance.user_id)
         
         var local_block_arr = [Block]()
-        
         
         if(!isLoadedMore && !isBackgroundRefresh){
             WittyFeedSDKSingleton.instance.block_arr.removeAll()
@@ -116,7 +115,6 @@ public class WittyFeedSDKMain {
         } else {
             WittyFeedSDKSingleton.instance.witty_deafult.set(jsonStr, forKey: "witty_data")
         }
-        
     }
     
     func handle_search_result(jsonString: String , isLoadedMore: Bool, isBackgroundRefresh: Bool, is_cached: Bool) {
@@ -132,12 +130,28 @@ public class WittyFeedSDKMain {
             let block_type = item["meta"]["type"].stringValue
             let card_json_arr = item["cards"].arrayValue
             local_block_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
-            print(local_block_arr.count)
         }
         
         WittyFeedSDKSingleton.instance.search_blocks_arr += local_block_arr
     }
-
+    
+    func handle_search_block_data_result(jsonString: String){
+        //for search block_data start
+        let local_block_data_json_arr = JSON.init(parseJSON: jsonString)["block_data"]["blocks"].arrayValue
+        
+        var local_block_data_arr = [Block]()
+        // WittyFeedSDKSingleton.instance.search_blocks_data_arr.removeAll()
+        
+        for item in local_block_data_json_arr{
+            let block_type = item["meta"]["type"].stringValue
+            let card_json_arr = item["cards"].arrayValue
+            local_block_data_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
+        }
+        
+        WittyFeedSDKSingleton.instance.search_blocks_data_arr += local_block_data_arr
+        //for serach block_data end
+    }
+    
     func handle_interests_result(jsonString: String) {
         let local_block_json_arr = JSON.init(parseJSON: jsonString)["data"]["blocks"].arrayValue
         
@@ -160,7 +174,7 @@ public class WittyFeedSDKMain {
         if WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "witty_data") != nil   {
             // loading data from cache
             let data = WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "witty_data")!
-    
+            
             handle_feeds_result(jsonStr: data, isLoadedMore: false, isBackgroundRefresh: false, isCached: true)
             
             // and refreshing feed in background
@@ -195,7 +209,7 @@ public class WittyFeedSDKMain {
     public func set_sdk_init_main_callback( init_callback:@escaping (String) -> Void  ){
         self.sdk_main_init_callback = init_callback
     }
-
+    
     public func init_wittyfeed_sdk(){
         WittyFeedSDKSingleton.instance.m_GA = WittyFeedSDKGoogleAnalytics(tracking_id: "UA-40875502-17", client_fcm: wittyFeedSDKApiClient.fcm_token!)
         WittyFeedSDKSingleton.instance.m_GA.send_event_tracking_GA_request(event_category: "WF SDK", event_action: wittyFeedSDKApiClient.app_id, event_value: "1", event_label: "WF SDK initialized") { (status) in
@@ -204,7 +218,7 @@ public class WittyFeedSDKMain {
         
         prepare_feed();
     }
-
+    
     public func update_fcm_token(new_fcm_token: String){
         if WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "wf_saved_fcm_token") != nil {
             if(new_fcm_token == WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "wf_saved_fcm_token")){

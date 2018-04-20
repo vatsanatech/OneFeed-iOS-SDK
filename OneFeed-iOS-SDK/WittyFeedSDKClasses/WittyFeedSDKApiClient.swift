@@ -39,13 +39,10 @@ public class WittyFeedSDKApiClient {
         var user_meta: [String:String] = [:]
         
         user_meta["device_type"] = "iOS"
-        
         user_meta["onefeed_sdk_version"] = SDK_Version
-        
         device_id = UIDevice.current.identifierForVendor!.uuidString
         user_meta["device_id"] = device_id
         user_meta["ios_id"] = device_id
-        
         user_meta["client_locale"] = NSLocale.current.identifier
         user_meta["client_locale_language"] = NSLocale.current.languageCode!
         
@@ -62,8 +59,8 @@ public class WittyFeedSDKApiClient {
         }
         
         let json = JSON(user_meta)
-        
         return json.rawString()!
     }
-  
+    
 }
+

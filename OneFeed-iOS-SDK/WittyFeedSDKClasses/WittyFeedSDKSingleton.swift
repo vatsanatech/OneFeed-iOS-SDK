@@ -21,13 +21,14 @@ public class WittyFeedSDKSingleton: NSObject {
     var block_arr = [Block]()
     var search_blocks_arr = [Block]()
     var interests_block_arr = [Block]()
+    var search_blocks_data_arr = [Block]()
     
     var isDataUpdated : Bool? = false
     var card_type: String!
     public var wittyFeed_sdk_api_client: WittyFeedSDKApiClient!
     public var wittyFeed_sdk_main : WittyFeedSDKMain!
     var m_GA: WittyFeedSDKGoogleAnalytics!
-
+    
     let NavBarColor = UIColor.wfhexColor(hex: "e5ebef", alpha: 1.0)
     let ImgBgColor = UIColor.wfhexColor(hex: "f0f0f0", alpha: 1.0)
     let NavBarPLNCatColor = UIColor.wfhexColor(hex: "0xEEEEEE", alpha: 1.0)
@@ -37,4 +38,3 @@ public class WittyFeedSDKSingleton: NSObject {
     var user_id = ""
     
 }
-
