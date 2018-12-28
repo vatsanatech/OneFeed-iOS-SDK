@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "OneFeed-iOS-SDK"
-  s.version      = "1.0.12"
+  s.version      = "1.2.0"
 
   s.summary      = "OneFeed-iOS-SDK"
 
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   OneFeed-iOS-SDK framework
                    DESC
 
-  s.homepage     = "https://wittyfeed.com"
+  s.homepage     = "https://wittyfeed.tv"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -54,10 +54,10 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "aishwarydhare" => "aishwary.dhare@gmail.com" }
-  # Or just: s.author    = "aishwarydhare"
-  # s.authors            = { "aishwarydhare" => "aishwary.dhare@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/aishwarydhare"
+  s.author             = { "sudamadewda" => "sudama@vatsana.com" }
+  # Or just: s.author    = "sudamadewda"
+  # s.authors            = { "sudamadewda" => "sudama@vatsana.com" }
+  # s.social_media_url   = "https://twitter.com/sudamaiOS"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -139,5 +139,6 @@ Pod::Spec.new do |s|
   s.dependency "Alamofire", "~> 4.6.0"
   s.dependency "SwiftyJSON", "~> 4.0.0"
   s.dependency "Kingfisher", "~> 4.6.1"
+  s.dependency "SwiftKeychainWrapper"
 
 end
