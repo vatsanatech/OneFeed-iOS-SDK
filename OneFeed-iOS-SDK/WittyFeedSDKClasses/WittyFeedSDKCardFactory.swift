@@ -20,11 +20,10 @@ public class WittyFeedSDKCardFactory{
     var screen_width = WittyFeedSDKSingleton.instance.screen_width
     var POSTER_SOLO_HW_RATIO = CGFloat(1)
     var POSTER_RV_HW_RATIO = CGFloat(0.8)
-    var VIDEO_SOLO_HW_RATIO = CGFloat(1.1)
+    var VIDEO_SOLO_HW_RATIO = CGFloat(0.7)
     var VIDEO_RV_HW_RATIO = CGFloat(0.7)
     var STORY_LIST_HW_RATIO = CGFloat(0.35)
     var safariDelegate: SFSafariViewControllerDelegate!
-    
     // used for story list card's size calculation
     var fixed_height_of_card = 0
     var fixed_width_of_card = 0
@@ -75,14 +74,14 @@ public class WittyFeedSDKCardFactory{
         let total_sv_height = Float( Float(( (fixed_top_margin+fixed_height_of_card) * Int(story_list_count)) ) - Float(fixed_top_margin))
         return CGSize(width: screen_width, height: CGFloat(total_sv_height) )
     }
-    
+
     
     func create_single_card(card: Card, card_type: String) -> UIView {
         var m_card_type = card.card_type!
         if(m_card_type == ""){
             m_card_type = card_type
         }
-        
+
         var card_to_return: mCustomUIView!
         
         switch (card_type){
@@ -101,15 +100,17 @@ public class WittyFeedSDKCardFactory{
         case "story_list_item":
             card_to_return = create_story_list_item_card(card: card)
             break
-            
+     
         default:
             break;
         }
         
         card_to_return.url_to_open = card.story_url!
+        card_to_return.storyId = card.id
+      
         
         card_to_return!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:)) ))
-        
+    
         return card_to_return
     }
     
@@ -137,18 +138,21 @@ public class WittyFeedSDKCardFactory{
     
     
     @objc func tap(sender: AnyObject){
-        print("tap detected")
+        let storyId = ((sender as! UITapGestureRecognizer).view as! mCustomUIView).storyId
+        let googleAnalytics = WittyFeedSDKGoogleAnalytics()
+       // googleAnalytics.sendAnalytics(typeArg: AnalyticsType.Story, labelArg: storyId!)
+        googleAnalytics.sendAnalytics(appId: "102", categoryArg: AnalyticsType.Story, labelArg: storyId ?? "test", notificationId: "testing")
         let url = ((sender as! UITapGestureRecognizer).view as! mCustomUIView).url_to_open as String
-        print(url)
+       
         let controller = SFSafariViewController(url: URL(string: url)!)
         self.vc_context.present(controller, animated: true, completion: nil)
         controller.delegate = safariDelegate!
     }
-    
+
     
     public func create_poster_solo_card(card: Card) -> mCustomUIView {
         let mainView = mCustomUIView( frame: CGRect(x: 0, y: 0, width: screen_width, height: CGFloat(screen_width * POSTER_SOLO_HW_RATIO)) )
-        
+       
         let cardBaseHeight = mainView.frame.size.height
         let cardBaseWidth = mainView.frame.size.width
         
@@ -156,7 +160,7 @@ public class WittyFeedSDKCardFactory{
         let r_2 = CGFloat(0.48)
         let r_3 = CGFloat(0.60)
         let r_9 = CGFloat(0.16)
-        
+
         let c_1 = CGFloat(10.0)
         let c_2 = CGFloat(20.0)
         let c_3 = CGFloat(30.0)
@@ -182,7 +186,7 @@ public class WittyFeedSDKCardFactory{
         lblCatName.layer.masksToBounds = true
         lblCatName.font = UIFont(name: "HelveticaNeue", size: 15.0)
         lblCatName.textColor = .white
-        
+
         let lblTitle = UILabel(frame: CGRect(x: c_1, y: cardBaseHeight * r_3, width: cardBaseWidth - c_2, height: cardBaseHeight * 0.25 ))
         lblTitle.text = card.story_title
         lblTitle.numberOfLines = 2
@@ -218,7 +222,7 @@ public class WittyFeedSDKCardFactory{
         mainView.addSubview(publisher_name)
         mainView.addSubview(authName)
         mainView.addSubview(lblCatName)
-        
+       
         return mainView
     }
     
@@ -228,7 +232,7 @@ public class WittyFeedSDKCardFactory{
         
         let cardBaseHeight = mainView.frame.size.height
         let cardBaseWidth = mainView.frame.size.width
-        
+ 
         let r_1 = CGFloat(0.40)
         let r_2 = CGFloat(0.48)
         let r_3 = CGFloat(0.60)
@@ -495,7 +499,7 @@ public class WittyFeedSDKCardFactory{
         publisher_name.font = UIFont(name: "HelveticaNeue-Medium", size: 12.0)
         publisher_name.numberOfLines = 1
         publisher_name.textColor = .black
-        
+
         if (card.cover_image) != nil{
             let url_string = card.cover_image
             let url = URL(string: url_string!)
@@ -523,7 +527,7 @@ public class WittyFeedSDKCardFactory{
         mainView.addSubview(lblCatName)
         return mainView
     }
-    
+
     func create_poster_cv(cardArrayList: [Card]) -> UIView{
         let parentCardSize = CGSize(width: screen_width, height: CGFloat(screen_width * POSTER_SOLO_HW_RATIO))
         
@@ -532,8 +536,8 @@ public class WittyFeedSDKCardFactory{
             v.translatesAutoresizingMaskIntoConstraints = false
             return v
         }()
-        var cardOffset_in_sv = 0
-        let fixed_left_margin = 15
+        var cardOffset_in_sv = 10
+        let fixed_left_margin = 10
         let fixed_width_of_card = Int((screen_width * POSTER_RV_HW_RATIO) * CGFloat(1.0))
         
         scrollView.frame = CGRect(x: 0, y: 0, width: parentCardSize.width, height: parentCardSize.height)
@@ -592,7 +596,7 @@ public class WittyFeedSDKCardFactory{
         
         return scrollView
     }
-    
+
     func create_collection1_4(cardArrayList: [Card]) -> UIView {
         
         let x_m = CGFloat(2.5) // fixed margin for left-right
@@ -601,7 +605,7 @@ public class WittyFeedSDKCardFactory{
         let half_card_width =  CGFloat( (first_card_width) - (x_m*2) )
         let half_card_x =  CGFloat(first_card_width + x_m)
         let small_cards_width_r = CGFloat( (half_card_width/2))
-        
+
         for i in 0 ..< cardArrayList.count {
             let card_data = cardArrayList[i]
             let card_view: mCustomUIView!
@@ -643,6 +647,7 @@ public class WittyFeedSDKCardFactory{
             }
             
             card_view.url_to_open = card_data.story_url!
+            card_view.storyId = card_data.id!
             card_view!.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:)) ))
             
             let imgCover = UIImageView(frame: CGRect(
@@ -679,7 +684,7 @@ public class WittyFeedSDKCardFactory{
             
             container_view.addSubview(card_view!)
         }
-        
+
         return container_view
     }
     
@@ -711,4 +716,3 @@ public class WittyFeedSDKCardFactory{
     }
     
 }
-

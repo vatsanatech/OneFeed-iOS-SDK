@@ -13,9 +13,8 @@ class CloudMessage {
     var title = ""
     var body = ""
     var action = ""
-    
     var app_id = "", cover_image = ""
-    var gcm_message_id = "", gcm_notification_action = "", id = "", notiff_agent = ""
+    var gcm_message_id = "", gcm_notification_action = "", noid = "", notiff_agent = ""
     var story_id = "", story_title = "", story_url = ""
     
     init(dict: NSDictionary){
@@ -45,6 +44,9 @@ class CloudMessage {
         }
         if let val = dict["app_id"] {
             self.app_id = val as! String
+        }
+        if let val = dict["noid"] {
+            self.noid = val as! String
         }
     }
     

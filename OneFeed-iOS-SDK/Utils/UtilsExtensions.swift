@@ -114,8 +114,9 @@ public class ConnectionCheck {
         let needsConnection = flags.contains(.connectionRequired)
         
         return (isReachable && !needsConnection)
+    }
 }
-}
+
 extension String
 {
     func replace(target: String, withString: String) -> String

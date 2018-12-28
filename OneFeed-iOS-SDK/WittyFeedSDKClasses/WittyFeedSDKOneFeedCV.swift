@@ -13,6 +13,7 @@ import SafariServices
 
 public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, SFSafariViewControllerDelegate {
     
+    //var onefeedsdk = OneFeedSdk()
     var screen_width = WittyFeedSDKSingleton.instance.screen_width
     var screen_height = WittyFeedSDKSingleton.instance.screen_height
     var wittyCardFactory: WittyFeedSDKCardFactory!
@@ -36,15 +37,18 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
+       // print(onefeedsdk.getAppId())
         
+        let googleAnalytics = WittyFeedSDKGoogleAnalytics()
+        googleAnalytics.sendAnalytics(typeArg: AnalyticsType.OneFeed, labelArg: "OneFeed viewed")
+        
+        self.navigationController?.isNavigationBarHidden = false
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         resourceBundle = Bundle(url: bundleURL!)
-        
-        if(resourceBundle == nil){
-            resourceBundle = Bundle(for: WittyFeedSDKInterestsCV.self)
-        }
+//        if(resourceBundle == nil){
+//            resourceBundle = Bundle(for: WittyFeedSDKInterestsCV.self)
+//        }
         searchActivityView = UIView( frame: CGRect(x: 0, y: 0, width: WittyFeedSDKSingleton.instance.screen_width, height: WittyFeedSDKSingleton.instance.screen_height) )
         searchActivityView.backgroundColor = .white
         activityIndicator.center = CGPoint(x: view.bounds.size.width/2, y: 100)
@@ -82,14 +86,23 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
     @objc func refresh(sender:AnyObject) {
-        WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.load_initial_data(isBackgroundCacheRefresh: false) { (status) in
-            if(status != "failed"){
-                self.refreshControl?.endRefreshing()
-                self.collectionView?.reloadData()
-            } else {
-                self.refreshControl?.endRefreshing()
-            }
+        WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.fetch_more_data(loadmore_offset: 0) { (status) in
+                        if(status != "failed"){
+                            self.refreshControl?.endRefreshing()
+                            self.collectionView?.reloadData()
+                        } else {
+                            self.refreshControl?.endRefreshing()
+                        }
         }
+        
+//        WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.load_initial_data(isBackgroundCacheRefresh: false) { (status) in
+//            if(status != "failed"){
+//                self.refreshControl?.endRefreshing()
+//                self.collectionView?.reloadData()
+//            } else {
+//                self.refreshControl?.endRefreshing()
+//            }
+//        }
     }
     
     func addBackButton() {
@@ -99,11 +112,11 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         backButton.addTarget(self, action: #selector(WittyFeedSDKOneFeedCV.backAction), for: .touchUpInside)
         backButtonItem = UIBarButtonItem(customView: backButton)
         
-        addButton = UIButton(type: .custom)
-        addButton.setImage(UIImage(named: "plus", in: resourceBundle, compatibleWith: nil), for: .normal)
-        addButton.frame = CGRect(x: 0, y: 7, width: 30, height: 30)
-        addButton.addTarget(self, action: #selector(WittyFeedSDKOneFeedCV.addAction), for: .touchUpInside)
-        addButtonItem = UIBarButtonItem(customView: addButton)
+       // addButton = UIButton(type: .custom)
+       // addButton.setImage(UIImage(named: "plus", in: resourceBundle, compatibleWith: nil), for: .normal)
+       // addButton.frame = CGRect(x: 0, y: 7, width: 30, height: 30)
+       // addButton.addTarget(self, action: #selector(WittyFeedSDKOneFeedCV.addAction), for: .touchUpInside)
+        //addButtonItem = UIBarButtonItem(customView: addButton)
         
         searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: WittyFeedSDKSingleton.instance.screen_width * 0.65, height: 20))
         navigationItem.titleView = searchBar
@@ -114,7 +127,7 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         
         self.navigationItem.setHidesBackButton(true, animated:true)
         self.navigationItem.setLeftBarButton(backButtonItem, animated: true)
-        self.navigationItem.setRightBarButton(addButtonItem, animated: true)
+       // self.navigationItem.setRightBarButton(addButtonItem, animated: true)
     }
     
     @IBAction func backAction(_ sender: UIButton) {
@@ -133,29 +146,18 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
-        let interestCollectionVC = WittyFeedSDKInterestsCV(nibName: "WittyFeedSDKInterestsCV", bundle: resourceBundle)
-        self.navigationController?.pushViewController(interestCollectionVC, animated: true)
+       // let interestCollectionVC = WittyFeedSDKInterestsCV(nibName: "WittyFeedSDKInterestsCV", bundle: resourceBundle)
+        //self.navigationController?.pushViewController(interestCollectionVC, animated: true)
     }
     
     public func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         last_str_searched = ""
         is_search_blocks_active = true
-        if(is_search_blocks_active){
-            WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.search_content(search_input_str: str_to_search, loadmore_offset: 0, search_content_main_callback: { (status) in
-                if(status != "failed"){
-                    self.last_str_searched = self.str_to_search;
-                    self.is_search_blocks = true
-                    self.collectionView?.reloadData()
-                } else {
-                    self.is_search_blocks = false
-                    self.collectionView?.reloadData()
-                }
-            })
-        }
+        self.collectionView?.reloadData()
         self.navigationItem.rightBarButtonItem = nil
         self.navigationItem.leftBarButtonItem = nil
         searchBar.showsCancelButton = true
-        // searchActivityView.isHidden = false
+       // searchActivityView.isHidden = false
         return true
     }
     
@@ -169,7 +171,7 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         } else {
             let _ = self.navigationController?.popViewController(animated: true)
         }
-        
+    
         self.searchBar.endEditing(true)
         searchBar.showsCancelButton = false
         searchActivityView.isHidden = true
@@ -181,33 +183,22 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
             self.searchBar.resignFirstResponder()
             self.view.endEditing(true)
         } else {
-            searchActivityView.isHidden = true
+           searchActivityView.isHidden = true
         }
-        self.navigationItem.rightBarButtonItem = addButtonItem
+     //   self.navigationItem.rightBarButtonItem = addButtonItem
         self.navigationItem.leftBarButtonItem = backButtonItem
         searchBar.resignFirstResponder()
-    }
-    
-    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        str_to_search = searchBar.text!
-        if(str_to_search != last_str_searched && str_to_search != ""){
-            WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.search_content(search_input_str: str_to_search, loadmore_offset: 0, search_content_main_callback: { (status) in
-                if(status != "failed"){
-                    self.last_str_searched = self.str_to_search;
-                    self.is_search_blocks = true
-                    self.collectionView?.reloadData()
-                } else {
-                    self.is_search_blocks = false
-                    self.collectionView?.reloadData()
-                }
-            })
-        }
     }
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if ConnectionCheck.isConnectedToNetwork() {
             self.searchBar.endEditing(true)
             str_to_search = searchBar.text!
+            if str_to_search != "" {
+                let googleAnalytics = WittyFeedSDKGoogleAnalytics()
+                googleAnalytics.sendAnalytics(typeArg: .Search, labelArg: str_to_search)
+                
+            }
             if(str_to_search != last_str_searched && str_to_search != ""){
                 searchActivityView.isHidden = false
                 activityIndicator.startAnimating()
@@ -248,7 +239,7 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         collectionView?.register(UINib(nibName: "SOLO_VIDEO", bundle: resourceBundle), forCellWithReuseIdentifier: "SOLO_VIDEO")
         collectionView?.register(UINib(nibName: "VIDEO_CV", bundle: resourceBundle), forCellWithReuseIdentifier: "VIDEO_CV")
         collectionView?.register(UINib(nibName: "STORY_LIST", bundle: resourceBundle), forCellWithReuseIdentifier: "STORY_LIST")
-        collectionView?.register(UINib(nibName: "CollectionView1_4", bundle: resourceBundle), forCellWithReuseIdentifier: "CollectionView1_4")
+         collectionView?.register(UINib(nibName: "CollectionView1_4", bundle: resourceBundle), forCellWithReuseIdentifier: "CollectionView1_4")
         collectionView?.register(UINib(nibName: "WittyFeedSDKLoaderCell", bundle: resourceBundle), forCellWithReuseIdentifier: "WittyFeedSDKLoaderCell")
     }
     
@@ -459,4 +450,3 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     }
     
 }
-

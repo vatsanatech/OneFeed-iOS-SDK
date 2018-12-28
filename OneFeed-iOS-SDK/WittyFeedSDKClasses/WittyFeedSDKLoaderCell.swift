@@ -15,5 +15,4 @@ class WittyFeedSDKLoaderCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

@@ -11,6 +11,8 @@ import UIKit
 public class mCustomUIView: UIView {
     
     var url_to_open: String!
+    var storyId: String!
+    
     
     required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

@@ -17,30 +17,33 @@ public class WittyFeedSDKMain {
     var sdk_main_init_callback: (String) -> Void = {_ in }
     var fetch_more_init_main_callback: (String) -> Void = {_ in }
     
+    
     public init(wittyFeedSDKApiClient: WittyFeedSDKApiClient){
         self.wittyFeedSDKApiClient = wittyFeedSDKApiClient
         WittyFeedSDKSingleton.instance.wittyFeed_sdk_api_client = wittyFeedSDKApiClient
         self.wittyFeedSdkNetworking = WittyFeedSDKNetworking(api_client: wittyFeedSDKApiClient)
         WittyFeedSDKSingleton.instance.wittyFeed_sdk_main = self
+        
     }
     
     //
     //MARK: Package Private Methods
     //
-    func load_initial_data(isBackgroundCacheRefresh : Bool, refresh_data_main_callback:@escaping (String) -> Void) {
-        
-        wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: 0, isBackgroundCacheRefresh: isBackgroundCacheRefresh, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
-            if(jsonStr != "failed"){
-                self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundCacheRefresh, isCached: false)
-                refresh_data_main_callback("success")
-            } else {
-                refresh_data_main_callback("failed")
-            }
-        })
-    }
+    //    func load_initial_data(isBackgroundCacheRefresh : Bool, refresh_data_main_callback:@escaping (String) -> Void) {
+    //
+    //        wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: 0, isBackgroundCacheRefresh: isBackgroundCacheRefresh, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
+    //            if(jsonStr != "failed"){
+    //                self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundCacheRefresh, isCached: false)
+    //                refresh_data_main_callback("success")
+    //            } else {
+    //                refresh_data_main_callback("failed")
+    //            }
+    //        })
+    //    }
+    
+    
     
     func fetch_more_data(loadmore_offset : Int, fetch_more_main_callback:@escaping (String) -> Void) {
-        
         wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: loadmore_offset, isBackgroundCacheRefresh: false, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
             if(jsonStr != "failed"){
                 self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: true, isBackgroundRefresh: isBackgroundCacheRefresh, isCached: false)
@@ -50,6 +53,19 @@ public class WittyFeedSDKMain {
             }
         })
     }
+    
+    func fetch_more_NativeCard_data(card_id: String , loadmore_offset : Int, fetch_more_main_callback:@escaping (String) -> Void) {
+        wittyFeedSdkNetworking.getStoryNativeCardData(card_id: card_id, isLoadedMore: false, loadmore_offset: loadmore_offset, isBackgroundCacheRefresh: false, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool, card_id: String) in
+            if(jsonStr != "failed"){
+                self.handle_nativeCard_feeds_result(card_id: card_id, jsonStr: jsonStr, isLoadedMore: true, isBackgroundRefresh: isBackgroundCacheRefresh, isCached: false)
+                
+                fetch_more_main_callback("success")
+            } else {
+                fetch_more_main_callback("failed")
+            }
+        })
+    }
+    
     
     func search_content(search_input_str: String, loadmore_offset : Int, search_content_main_callback:@escaping (String) -> Void) {
         
@@ -86,12 +102,11 @@ public class WittyFeedSDKMain {
     //MARK: Private Methods
     //
     func handle_feeds_result(jsonStr: String, isLoadedMore: Bool, isBackgroundRefresh: Bool, isCached: Bool){
-        
-        let block_json_arr = JSON.init(parseJSON: jsonStr)["data"]["blocks"].arrayValue
+        let block_json_arr = JSON.init(parseJSON: jsonStr)["feed_data"]["blocks"].arrayValue
         self.handle_search_block_data_result(jsonString: jsonStr)
-        WittyFeedSDKSingleton.instance.user_id = JSON.init(parseJSON: jsonStr)["data"]["config"]["user_id"].string!
-        print("user id")
-        print(WittyFeedSDKSingleton.instance.user_id)
+        WittyFeedSDKSingleton.instance.user_id = JSON.init(parseJSON: jsonStr)["feed_data"]["config"]["user_id"].string!
+//        print("user id")
+//        print(WittyFeedSDKSingleton.instance.user_id)
         
         var local_block_arr = [Block]()
         
@@ -105,6 +120,8 @@ public class WittyFeedSDKMain {
                 let card_json_arr = item["cards"].arrayValue
                 local_block_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
             }
+            print(local_block_arr)
+            print(local_block_arr.count)
             WittyFeedSDKSingleton.instance.block_arr += local_block_arr
             
             if(!isLoadedMore){
@@ -117,9 +134,43 @@ public class WittyFeedSDKMain {
         }
     }
     
-    func handle_search_result(jsonString: String , isLoadedMore: Bool, isBackgroundRefresh: Bool, is_cached: Bool) {
-        let local_block_json_arr = JSON.init(parseJSON: jsonString)["data"]["blocks"].arrayValue
+    
+    func handle_nativeCard_feeds_result(card_id: String, jsonStr: String, isLoadedMore: Bool, isBackgroundRefresh: Bool, isCached: Bool){
+        let cardId = JSON.init(parseJSON: jsonStr)["repeating_data"]["meta"]["card_id"].stringValue
+        let card_arr = JSON.init(parseJSON: jsonStr)["repeating_data"]["cards"].arrayValue
+        let cardModelArray = RepeatingCardModel(card_json_arr: card_arr, card_id: cardId)
+        WittyFeedSDKSingleton.instance.dict[cardId] = cardModelArray
+        print("\( WittyFeedSDKSingleton.instance.dict)")
+        print("\( WittyFeedSDKSingleton.instance.dict.count)")
         
+       
+
+        
+//        if(!isLoadedMore && !isBackgroundRefresh){
+//            WittyFeedSDKSingleton.instance.block_arr.removeAll()
+//        }
+        
+//        if(!isBackgroundRefresh){
+//            for item in block_json_arr{
+//                let block_type = item["meta"]["type"].stringValue
+//                let card_json_arr = item["cards"].arrayValue
+//                local_block_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
+//            }
+//            WittyFeedSDKSingleton.instance.block_arr += local_block_arr
+//
+//            if(!isLoadedMore){
+//                if(!isCached){
+//                    WittyFeedSDKSingleton.instance.witty_deafult.set(jsonStr, forKey: "witty_data")
+//                }
+//            }
+//        } else {
+//            WittyFeedSDKSingleton.instance.witty_deafult.set(jsonStr, forKey: "witty_data")
+//        }
+    }
+    
+    func handle_search_result(jsonString: String , isLoadedMore: Bool, isBackgroundRefresh: Bool, is_cached: Bool) {
+        
+        let local_block_json_arr = JSON.init(parseJSON: jsonString)["feed_data"]["blocks"].arrayValue
         if(!isLoadedMore){
             WittyFeedSDKSingleton.instance.search_blocks_arr.removeAll()
         }
@@ -137,8 +188,7 @@ public class WittyFeedSDKMain {
     
     func handle_search_block_data_result(jsonString: String){
         //for search block_data start
-        let local_block_data_json_arr = JSON.init(parseJSON: jsonString)["block_data"]["blocks"].arrayValue
-        
+        let local_block_data_json_arr = JSON.init(parseJSON: jsonString)["search_data"]["blocks"].arrayValue
         var local_block_data_arr = [Block]()
         // WittyFeedSDKSingleton.instance.search_blocks_data_arr.removeAll()
         
@@ -153,7 +203,7 @@ public class WittyFeedSDKMain {
     }
     
     func handle_interests_result(jsonString: String) {
-        let local_block_json_arr = JSON.init(parseJSON: jsonString)["data"]["blocks"].arrayValue
+        let local_block_json_arr = JSON.init(parseJSON: jsonString)["feed_data"]["blocks"].arrayValue
         
         var local_block_arr = [Block]()
         WittyFeedSDKSingleton.instance.interests_block_arr.removeAll()
@@ -162,7 +212,6 @@ public class WittyFeedSDKMain {
             let block_type = item["meta"]["type"].stringValue
             let card_json_arr = item["cards"].arrayValue
             local_block_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
-            print(local_block_arr.count)
         }
         
         WittyFeedSDKSingleton.instance.interests_block_arr += local_block_arr
@@ -195,11 +244,45 @@ public class WittyFeedSDKMain {
                     self.sdk_main_init_callback("failed")
                     return
                 }
+        
                 self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundRefresh, isCached: false)
-                print(WittyFeedSDKSingleton.instance.block_arr.count)
+                 print(WittyFeedSDKSingleton.instance.block_arr.count)
                 self.sdk_main_init_callback("success")
             }
         }
+    }
+    
+    func prepare_nativeCardFeed(card_id: String){
+        let f = DateFormatter()
+        f.dateFormat = "dd.MM.yyyy"
+//        if WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "witty_data") != nil   {
+//            // loading data from cache
+//            let data = WittyFeedSDKSingleton.instance.witty_deafult.string(forKey: "witty_data")!
+//
+//            handle_feeds_result(jsonStr: data, isLoadedMore: false, isBackgroundRefresh: false, isCached: true)
+//
+//            // and refreshing feed in background
+//            wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: 0, isBackgroundCacheRefresh: true) { (jsonStr, isLoadedMore, isBackgroundRefresh) in
+//                if(jsonStr == "failed"){
+//                    self.sdk_main_init_callback("failed")
+//                    return
+//                }
+//                WittyFeedSDKSingleton.instance.isDataUpdated = false
+//                self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundRefresh, isCached: false)
+//                self.sdk_main_init_callback("success")
+//            }
+//
+//        } else {
+            // load fresh feed
+        wittyFeedSdkNetworking.getStoryNativeCardData(card_id: card_id, isLoadedMore: false, loadmore_offset: 0, isBackgroundCacheRefresh: false) { (jsonStr, isLoadedMore, isBackgroundRefresh, card_id) in
+                if(jsonStr == "failed"){
+                    self.sdk_main_init_callback("failed")
+                    return
+                }
+            self.handle_nativeCard_feeds_result(card_id: card_id, jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundRefresh, isCached: false)
+                self.sdk_main_init_callback("success")
+            }
+        //}
     }
     
     
@@ -211,12 +294,11 @@ public class WittyFeedSDKMain {
     }
     
     public func init_wittyfeed_sdk(){
-        WittyFeedSDKSingleton.instance.m_GA = WittyFeedSDKGoogleAnalytics(tracking_id: "UA-40875502-17", client_fcm: wittyFeedSDKApiClient.fcm_token!)
-        WittyFeedSDKSingleton.instance.m_GA.send_event_tracking_GA_request(event_category: "WF SDK", event_action: wittyFeedSDKApiClient.app_id, event_value: "1", event_label: "WF SDK initialized") { (status) in
-            print(status)
-        }
-        
         prepare_feed();
+    }
+    
+    public func init_native_card(cardId: String){
+        prepare_nativeCardFeed(card_id: cardId)
     }
     
     public func update_fcm_token(new_fcm_token: String){
@@ -228,6 +310,8 @@ public class WittyFeedSDKMain {
         wittyFeedSdkNetworking.updateFcmToken(new_fcm_token: new_fcm_token) { (status) in
             if(status == "failed"){
                 print("fcm token updation failed")
+            }else{
+                print(status)
             }
         }
     }

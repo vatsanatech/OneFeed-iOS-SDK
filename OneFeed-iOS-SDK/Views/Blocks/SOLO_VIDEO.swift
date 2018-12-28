@@ -11,6 +11,7 @@ import UIKit
 class SOLO_VIDEO: UICollectionViewCell {
 
     @IBOutlet weak var solo_video_view: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

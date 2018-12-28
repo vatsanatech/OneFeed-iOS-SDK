@@ -1,29 +1,31 @@
 //
-//  Block.swift
-//  WF_NEW
+//  RepeatingCardModel.swift
+//  wittyfeed_ios_api
 //
-//  Created by Sudama Dewda on 23/09/17.
-//  Copyright © 2017 Eric Cerney. All rights reserved.
+//  Created by sudama dewda on 12/25/18.
+//  Copyright © 2018 wittyfeed. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-public class Block{   // This code defines the basic properties for the data you need to store.
-
+public class RepeatingCardModel{   // This code defines the basic properties for the data you need to store.
+    
     //MARK: Properties
     
-    var type: String!
-    var section_name: String!
+//    var status: String!
+    var cardId : String!
     var card_arr: [Card]!
- 
+    init() {
+        
+    }
     //MARK: Initialization
-    init(type: String, card_json_arr: [JSON]){
-        self.type = type
-        card_arr = [Card]()
-        card_arr.removeAll()
+    init(card_json_arr: [JSON], card_id: String){
+       card_arr = [Card]()
+       cardId = card_id
+       // card_arr.removeAll()
         var card: Card
-
+        
         // Initialize stored properties.
         
         for item in card_json_arr {
