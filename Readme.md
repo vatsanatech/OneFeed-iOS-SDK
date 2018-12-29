@@ -62,11 +62,18 @@ SwiftKeychainWrapper    // for unique device
 
 ```swift
 
+* Add this code in your AppDelegate.swift 
+
+   var appId: String = "YOUR APP ID"
+   var apiKey: String = "YOUR API KEY"
+    
+
 class MainViewController: UIViewController {
 
 let APP_ID = "<YOUR_APP_ID>" //App id provided by WF
 let API_KEY = "<YOUR_API_KEY>" //App access key provided by WF
 let FCM_TOKEN = "" // FCM TOKEN of the user
+let delegate = UIApplication.shared.delegate as! AppDelegate 
 
 override func viewDidLoad() {
   super.viewDidLoad()
@@ -74,10 +81,13 @@ override func viewDidLoad() {
     if let temp = InstanceID.instanceID().token(){
         FCM_TOKEN = temp
     }
-
+    
     // ====================
     // SDK WORK STARTS HERE
     // ====================
+    
+     APP_ID = delegate.appId
+     API_KEY = delegate.apiKey
 
     //
     // OPTIONAL to provide basic user_meta.
@@ -162,10 +172,10 @@ In dashboard(https://onefeed.ai), Go to your added app section and Make a card a
 Step 2:  Set this tag in your View (Tag is mandatory):
 
 ```xml
-      UIImageView.tag = 1   //for Story Image
-      UIView.tag      = 2   //for Opacity adjust UIView
-      UILabel.tag     = 3   //for Story Title 
-      UILabel.tag     = 4   //for Category Name
+      UIImageView.tag = 1001   //for Story Image
+      UIView.tag      = 1002   //for Opacity adjust UIView
+      UILabel.tag     = 1003   //for Story Title 
+      UILabel.tag     = 1004   //for Category Name
 ```
 Step 3: Add this code in your UIViewController class (First time initialize your card):
 
@@ -179,7 +189,7 @@ Step 4: Add this code in your UITableView/UICollectionView class:
 
 ```java
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let feedNativeCard = OneFeedNativeCard() 
         //Repeating card view
          let cell = tableView.dequeueReusableCell(withIdentifier: "NativeCardCell", for: indexPath) as! NativeCardCell
             
