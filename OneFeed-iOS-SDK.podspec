@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "OneFeed-iOS-SDK"
-  s.version      = "1.2.0"
+  s.version      = "1.2.1"
 
   s.summary      = "OneFeed-iOS-SDK"
 
