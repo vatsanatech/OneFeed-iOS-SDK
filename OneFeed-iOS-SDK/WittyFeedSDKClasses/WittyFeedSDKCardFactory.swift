@@ -140,10 +140,10 @@ public class WittyFeedSDKCardFactory{
     @objc func tap(sender: AnyObject){
         let storyId = ((sender as! UITapGestureRecognizer).view as! mCustomUIView).storyId
         let googleAnalytics = WittyFeedSDKGoogleAnalytics()
-       // googleAnalytics.sendAnalytics(typeArg: AnalyticsType.Story, labelArg: storyId!)
-        googleAnalytics.sendAnalytics(appId: "102", categoryArg: AnalyticsType.Story, labelArg: storyId ?? "test", notificationId: "testing")
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        googleAnalytics.sendAnalytics(appId: delegate.appId, categoryArg: AnalyticsType.Story, labelArg: storyId ?? "test", notificationId: "testing")
         let url = ((sender as! UITapGestureRecognizer).view as! mCustomUIView).url_to_open as String
-       
+        
         let controller = SFSafariViewController(url: URL(string: url)!)
         self.vc_context.present(controller, animated: true, completion: nil)
         controller.delegate = safariDelegate!

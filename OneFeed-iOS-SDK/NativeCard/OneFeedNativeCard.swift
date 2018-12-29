@@ -22,16 +22,17 @@ class OneFeedNativeCard {
     var cardIdUrl : String!
     var fetch_more_init_main_callback: (String) -> Void = {_ in }
 
+    public init(){}
     
     func showCard(cardId : String, view: UIView , isVerticalImage: Bool, reference: String, index: Int, views: UIViewController) -> String {
         if vc_context == nil {
             vc_context = views
             cardIdUrl = cardId
         }
-        let titleStory = view.viewWithTag(3) as! UILabel
-        let imageStory = view.viewWithTag(1) as! UIImageView
-        let categoryName = view.viewWithTag(4) as! UILabel
-        let layerView = view.viewWithTag(2)
+        let titleStory = view.viewWithTag(1003) as! UILabel
+        let imageStory = view.viewWithTag(1001) as! UIImageView
+        let categoryName = view.viewWithTag(1004) as! UILabel
+        let layerView = view.viewWithTag(1002)
         let card_view: mCustomUIView!
         card_view = mCustomUIView(frame: CGRect(
             x: 0,

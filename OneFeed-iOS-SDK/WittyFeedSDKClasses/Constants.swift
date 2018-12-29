@@ -13,8 +13,7 @@ struct Constants
     
 {
     
-    static let sdk_version = "1.2.0"
-    static let APP_ID = "102"
+    static let sdk_version = "1.2.1"
     static let AnalyticsURL = "https://reqy4b30ec.execute-api.us-east-1.amazonaws.com/apptrack/"
    // static let ANALYTICS_TRACKING_ID = "UA-40875502-17"
     

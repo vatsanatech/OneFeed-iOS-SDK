@@ -27,7 +27,11 @@ class WittyFeedSDKGoogleAnalytics {
     var debug_mode = ""
     let GA_URL = Constants.TRACKING_URL + Constants.TRACKING
     var CLIENT_UUID = ""
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
     private let UNIQUE_KEY = "mySuperDuperUniqueId"
+    
     
     init() {
         //Debug Mode
@@ -36,19 +40,19 @@ class WittyFeedSDKGoogleAnalytics {
         #else
         debug_mode = "iOS_Release"
         #endif
-        
+        main_payload["app_id"] = delegate.appId
         main_payload["sdkvr"] = Constants.sdk_version
         main_payload["lng"] = Locale.current.languageCode
         main_payload["pckg"] = Bundle.main.bundleIdentifier!
         main_payload["mode"] = debug_mode
         main_payload["os"] = "iOS"
         main_payload["device_id"] = KeychainWrapper.standard.string(forKey: UNIQUE_KEY)
-
+        
     }
     
     init(tracking_id: String, client_fcm: String){
         if(CLIENT_UUID == ""){
-           CLIENT_UUID = NSUUID().uuidString
+            CLIENT_UUID = NSUUID().uuidString
         }
         
         var local_client_fcm = client_fcm
@@ -66,35 +70,35 @@ class WittyFeedSDKGoogleAnalytics {
         main_payload["aid"] = Bundle.main.bundleIdentifier!
     }
     
- 
+    
     func sendAnalytics(typeArg: AnalyticsType, labelArg: String){
         let args = labelArg
         switch typeArg {
         case .SDK:
-            prepareSDKInitialisedTracking(eventType: "SDK initialised", appId: Constants.APP_ID)
+            prepareSDKInitialisedTracking(eventType: "SDK initialised", appId: delegate.appId)
             break
         case .NotificationReceived:
-           // prepareNotificationReceivedTracking(eventType: "notification received", storyId: <#T##String#>, notificationId: <#T##String#>, appId: Constants.APP_ID)
+            // prepareNotificationReceivedTracking(eventType: "notification received", storyId: <#T##String#>, notificationId: <#T##String#>, appId: Constants.APP_ID)
             break
         case .NotificationOpened:
             //prepareNotificationOpenedTracking(eventType: "notification opened", storyId: <#T##String#>, notificationId: <#T##String#>, appId: Constants.APP_ID)
             break
         case .Story:
-            prepareStoryOpenedTracking(eventType: "story opened", storyId: args, source: "Feed", appId: Constants.APP_ID)
+            prepareStoryOpenedTracking(eventType: "story opened", storyId: args, source: "Feed", appId: delegate.appId)
             break
         case .NativeStory:
-             prepareNativeCardStoryOpenedTracking(eventType: "story opened", storyId: args, source: "Card", appId: Constants.APP_ID)
+            prepareNativeCardStoryOpenedTracking(eventType: "story opened", storyId: args, source: "Card", appId: delegate.appId)
             
         case .Search:
-            prepareSearchExecutedTracking(eventType: "search executed", searchStr: args, appId: Constants.APP_ID)
+            prepareSearchExecutedTracking(eventType: "search executed", searchStr: args, appId: delegate.appId)
             break
         case .OneFeed:
-            prepareOneFeedViewedTracking(eventType: "oneFeed viewed", appId: Constants.APP_ID)
+            prepareOneFeedViewedTracking(eventType: "oneFeed viewed", appId: delegate.appId)
             break
             
         case .CardView:
             
-            prepareNativeCardViewTracking(eventType: "Card Viewed", appId: Constants.APP_ID)
+            prepareNativeCardViewTracking(eventType: "Card Viewed", appId: delegate.appId)
             
             
         default:
@@ -137,7 +141,7 @@ class WittyFeedSDKGoogleAnalytics {
         payload["rsrc"] = "App_init"
         sendRequst(payload: payload)
     }
-
+    
     func prepareNotificationReceivedTracking(eventType: String, storyId: String, notificationId: String, appId: String){
         var payload = main_payload
         payload["etype"] = eventType
@@ -147,7 +151,7 @@ class WittyFeedSDKGoogleAnalytics {
         payload["noid"] = notificationId
         print(payload)
         sendRequst(payload: payload)
-    
+        
     }
     
     func prepareNotificationOpenedTracking(eventType: String, storyId: String, notificationId: String, appId: String){
@@ -206,19 +210,19 @@ class WittyFeedSDKGoogleAnalytics {
         payload["rsrc"] = "Native Card"
         sendRequst(payload: payload)
     }
-
+    
     func sendRequst(payload: [String: String]){
         
-    print(payload)
+        print(payload)
         if ConnectionCheck.isConnectedToNetwork() {
             //print(GA_URL,payload)
-       // print(payload)
-    
-         Alamofire.request(GA_URL, method: .post, parameters: payload, encoding: JSONEncoding.default, headers: nil)
-            .responseJSON{ response in
-                print(response)
-               // callback("GA STATUS: \(String(describing: (response.response?.statusCode)!))")
-        }
+            // print(payload)
+            
+            Alamofire.request(GA_URL, method: .post, parameters: payload, encoding: JSONEncoding.default, headers: nil)
+                .responseJSON{ response in
+                    print(response)
+                    // callback("GA STATUS: \(String(describing: (response.response?.statusCode)!))")
+            }
         } else{
             print("disConnected")
             
