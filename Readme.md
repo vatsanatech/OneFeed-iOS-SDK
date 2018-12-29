@@ -2,7 +2,7 @@
 
 > # Note
 > WittyFeed SDK API is now `OneFeed iOS SDK`,
-> New v1.0.12 made live on 18 April' 2018
+> New v1.2.0 made live on 28 Dec' 2018
 
 ![Platform](https://img.shields.io/badge/Platform-iOS-green.svg)
 [ ![Pods](https://img.shields.io/badge/Pods-1.0.12-blue.svg)](#1-getting-started)
@@ -14,9 +14,9 @@
 3. [License](#3-license)
 
 ## Basic concepts
-OneFeed brings you new revolutionary way to monetize your App Business. OneFeed provides engaging content from top publishers in your app, and through the [Viral9 Dashboard](https://viral9.com) you can track your earning with the content consumption.
+OneFeed brings you new revolutionary way to monetize your App Business. OneFeed provides engaging content from top publishers in your app, and through the [OneFeed Dashboard](http://www.onefeed.ai) you can track your earning with the content consumption.
 
-[Viral9 is World's Top Paying Network](https://viral9.com)
+[OneFeed is World's Top Paying Network](http://www.onefeed.ai)
 
 OneFeed SDK has its core competency at its personalised feed recommendation algorithms and lightweight architecture.
 
@@ -39,7 +39,7 @@ Browse through the example app in this repository to see how the OneFeed SDK can
 1. [Integrate using CocoaPods](#1-getting-started)
 
 ```groovy
-pod 'OneFeed-iOS-SDK', :git => 'https://github.com/vatsanatech/OneFeed-iOS-SDK', :tag => ‘1.0.12’
+pod 'OneFeed-iOS-SDK', :git => 'https://github.com/vatsanatech/OneFeed-iOS-SDK', :tag => ‘1.2.0’
 ```
 
 2. Confirm for the following dependencies in your Podfile
@@ -50,6 +50,8 @@ SwiftyJSON (4.0.0)
 Kingfisher (4.6.1)
 Firebase/Core (4.8.2) // for notification service only
 Firebase/Messaging (4.8.2)  // for notification service only
+SwiftKeychainWrapper    // for unique device
+
 ```
 
 > ## Notice
@@ -152,7 +154,42 @@ To utilize and open waterfall feed from SDK, push/present the `WittyFeedSDKWater
   // ============================
 ```
 
-### 1.5. For Notifications Service of WittyFeediOSSDK
+### 1.5. Fetch a Modular Native Card
+
+Step 1:
+In dashboard(https://onefeed.ai), Go to your added app section and Make a card according to your requirements and note the card id.
+
+Step 2:  Set this tag in your View (Tag is mandatory):
+
+```xml
+      UIImageView.tag = 1   //for Story Image
+      UIView.tag      = 2   //for Opacity adjust UIView
+      UILabel.tag     = 3   //for Story Title 
+      UILabel.tag     = 4   //for Category Name
+```
+Step 3: Add this code in your UIViewController class (First time initialize your card):
+
+```java
+
+ WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.init_native_card(cardId: "YOUR CARD ID")
+
+```
+
+Step 4: Add this code in your UITableView/UICollectionView class:
+
+```java
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //Repeating card view
+         let cell = tableView.dequeueReusableCell(withIdentifier: "NativeCardCell", for: indexPath) as! NativeCardCell
+            
+            let categoryType = feedNativeCard.showCard(cardId: "YOUR CARD ID", view: cell.userView , isVerticalImage: true, reference: "test", index: indexPath.row, views: self)
+            print(categoryType)
+            return cell
+    }
+```
+
+### 1.6. For Notifications Service of WittyFeediOSSDK
 
 In your AppDelegate, update your `userNotificationCenter (willPresent..)` and `userNotificationCenter (didRecieve..)` with the code below
 
