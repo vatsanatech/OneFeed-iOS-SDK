@@ -26,23 +26,6 @@ public class WittyFeedSDKMain {
         
     }
     
-    //
-    //MARK: Package Private Methods
-    //
-    //    func load_initial_data(isBackgroundCacheRefresh : Bool, refresh_data_main_callback:@escaping (String) -> Void) {
-    //
-    //        wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: 0, isBackgroundCacheRefresh: isBackgroundCacheRefresh, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
-    //            if(jsonStr != "failed"){
-    //                self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundCacheRefresh, isCached: false)
-    //                refresh_data_main_callback("success")
-    //            } else {
-    //                refresh_data_main_callback("failed")
-    //            }
-    //        })
-    //    }
-    
-    
-    
     func fetch_more_data(loadmore_offset : Int, fetch_more_main_callback:@escaping (String) -> Void) {
         wittyFeedSdkNetworking.getStoryFeedData(isLoadedMore: false, loadmore_offset: loadmore_offset, isBackgroundCacheRefresh: false, callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
             if(jsonStr != "failed"){
@@ -78,26 +61,6 @@ public class WittyFeedSDKMain {
             }
         })
     }
-    
-    func get_interests_list(get_interest_main_callback:@escaping (String) -> Void) {
-        
-        wittyFeedSdkNetworking.fetch_interests(callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
-            if(jsonStr != "failed"){
-                self.handle_interests_result(jsonString: jsonStr)
-                get_interest_main_callback("success")
-            } else {
-                get_interest_main_callback("failed")
-            }
-        })
-    }
-    
-    func set_interests_list(interest_id: String, isSelected: Bool, set_interest_main_callback:@escaping (String) -> Void) {
-        
-        wittyFeedSdkNetworking.set_interests(callback: { (jsonStr: String, isLoadedMore: Bool, isBackgroundCacheRefresh: Bool) in
-            set_interest_main_callback(jsonStr)
-        }, interest_id: interest_id, isSelected: isSelected)
-    }
-    
     //
     //MARK: Private Methods
     //
@@ -105,9 +68,6 @@ public class WittyFeedSDKMain {
         let block_json_arr = JSON.init(parseJSON: jsonStr)["feed_data"]["blocks"].arrayValue
         self.handle_search_block_data_result(jsonString: jsonStr)
         WittyFeedSDKSingleton.instance.user_id = JSON.init(parseJSON: jsonStr)["feed_data"]["config"]["user_id"].string!
-//        print("user id")
-//        print(WittyFeedSDKSingleton.instance.user_id)
-        
         var local_block_arr = [Block]()
         
         if(!isLoadedMore && !isBackgroundRefresh){
@@ -120,8 +80,6 @@ public class WittyFeedSDKMain {
                 let card_json_arr = item["cards"].arrayValue
                 local_block_arr.append(Block(type: block_type, card_json_arr: card_json_arr))
             }
-            print(local_block_arr)
-            print(local_block_arr.count)
             WittyFeedSDKSingleton.instance.block_arr += local_block_arr
             
             if(!isLoadedMore){
@@ -140,9 +98,7 @@ public class WittyFeedSDKMain {
         let card_arr = JSON.init(parseJSON: jsonStr)["repeating_data"]["cards"].arrayValue
         let cardModelArray = RepeatingCardModel(card_json_arr: card_arr, card_id: cardId)
         WittyFeedSDKSingleton.instance.dict[cardId] = cardModelArray
-        print("\( WittyFeedSDKSingleton.instance.dict)")
-        print("\( WittyFeedSDKSingleton.instance.dict.count)")
-        
+       
        
 
         
@@ -246,7 +202,6 @@ public class WittyFeedSDKMain {
                 }
         
                 self.handle_feeds_result(jsonStr: jsonStr, isLoadedMore: isLoadedMore, isBackgroundRefresh: isBackgroundRefresh, isCached: false)
-                 print(WittyFeedSDKSingleton.instance.block_arr.count)
                 self.sdk_main_init_callback("success")
             }
         }
@@ -291,6 +246,9 @@ public class WittyFeedSDKMain {
     //
     public func set_sdk_init_main_callback( init_callback:@escaping (String) -> Void  ){
         self.sdk_main_init_callback = init_callback
+        let googleAnalytics = WittyFeedSDKGoogleAnalytics()
+        googleAnalytics.sendAnalytics(typeArg: AnalyticsType.SDK, labelArg: Constants.SDK_INITIALISED)
+        
     }
     
     public func init_wittyfeed_sdk(){

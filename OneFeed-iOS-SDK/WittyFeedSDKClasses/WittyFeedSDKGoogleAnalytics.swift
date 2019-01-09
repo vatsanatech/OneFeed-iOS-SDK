@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftKeychainWrapper
 
 enum AnalyticsType: String {
     case SDK
@@ -29,10 +28,6 @@ class WittyFeedSDKGoogleAnalytics {
     var CLIENT_UUID = ""
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    
-    private let UNIQUE_KEY = "mySuperDuperUniqueId"
-    
-    
     init() {
         //Debug Mode
         #if DEBUG
@@ -40,17 +35,18 @@ class WittyFeedSDKGoogleAnalytics {
         #else
         debug_mode = "iOS_Release"
         #endif
-        main_payload["app_id"] = delegate.appId
+        main_payload["appid"] = delegate.appId
         main_payload["sdkvr"] = Constants.sdk_version
         main_payload["lng"] = Locale.current.languageCode
         main_payload["pckg"] = Bundle.main.bundleIdentifier!
         main_payload["mode"] = debug_mode
         main_payload["os"] = "iOS"
-        main_payload["device_id"] = KeychainWrapper.standard.string(forKey: UNIQUE_KEY)
+        main_payload["device_id"] = UIDevice.current.identifierForVendor?.uuidString
         
     }
     
     init(tracking_id: String, client_fcm: String){
+        
         if(CLIENT_UUID == ""){
             CLIENT_UUID = NSUUID().uuidString
         }
@@ -65,9 +61,11 @@ class WittyFeedSDKGoogleAnalytics {
         main_payload["ds"] = "iOS SDK"
         main_payload["cid"] = CLIENT_UUID
         main_payload["uid"] = local_client_fcm
-        main_payload["av"] = "1.2.0"
+        main_payload["av"] = Constants.sdk_version
         main_payload["an"] = Bundle.main.bundleIdentifier!
         main_payload["aid"] = Bundle.main.bundleIdentifier!
+        main_payload["device_id"] = UIDevice.current.identifierForVendor?.uuidString
+        
     }
     
     
@@ -108,15 +106,11 @@ class WittyFeedSDKGoogleAnalytics {
         
     }
     func sendAnalytics(appId: String, categoryArg: AnalyticsType, labelArg: String, notificationId: String){
-        print(appId)
-        print(AnalyticsType.NotificationReceived)
-        print(labelArg)
         
         main_payload["sdkvr"] = Constants.sdk_version
         main_payload["lng"] = Locale.current.languageCode
         main_payload["cc"] = (Locale.current as NSLocale).object(forKey: .countryCode) as? String
         main_payload["appuid"] = Bundle.main.bundleIdentifier!
-        print(main_payload)
         switch categoryArg {
         case .NotificationOpened:
             prepareNotificationOpenedTracking(eventType: "notification opened", storyId: labelArg, notificationId: notificationId, appId: appId)
@@ -135,10 +129,9 @@ class WittyFeedSDKGoogleAnalytics {
     
     func prepareSDKInitialisedTracking(eventType: String, appId: String){
         var payload = main_payload
-        //print(payload)
         payload["etype"] = eventType
         payload["appid"] = appId
-        payload["rsrc"] = "App_init"
+        payload["rsrc"] = Constants.APP_INIT
         sendRequst(payload: payload)
     }
     
@@ -149,7 +142,6 @@ class WittyFeedSDKGoogleAnalytics {
         payload["sid"] = storyId
         payload["rsrc"] = "notification"
         payload["noid"] = notificationId
-        print(payload)
         sendRequst(payload: payload)
         
     }
@@ -161,7 +153,6 @@ class WittyFeedSDKGoogleAnalytics {
         payload["sid"] = storyId
         payload["rsrc"] = "notification"
         payload["noid"] = notificationId
-        print(payload)
         sendRequst(payload: payload)
         
         
@@ -172,7 +163,6 @@ class WittyFeedSDKGoogleAnalytics {
         payload["appid"] = appId
         payload["sid"] = storyId
         payload["rsrc"] = source
-        print(payload)
         sendRequst(payload: payload)
     }
     
@@ -182,7 +172,6 @@ class WittyFeedSDKGoogleAnalytics {
         payload["appid"] = appId
         payload["sid"] = storyId
         payload["rsrc"] = source
-        print(payload)
         sendRequst(payload: payload)
     }
     
@@ -191,7 +180,7 @@ class WittyFeedSDKGoogleAnalytics {
         payload["etype"] = eventType
         payload["appid"] = appId
         payload["srchstr"] = searchStr
-        payload["rsrc"] = "Feed"
+        payload["rsrc"] = Constants.SEARCH_VIEWED_BY_FEED
         sendRequst(payload: payload)
         
     }
@@ -199,7 +188,7 @@ class WittyFeedSDKGoogleAnalytics {
         var payload = main_payload
         payload["etype"] = eventType
         payload["appid"] = appId
-        payload["rsrc"] = ""
+        payload["rsrc"] = Constants.ONE_FEED_BY_CLICK
         sendRequst(payload: payload)
     }
     
@@ -213,15 +202,10 @@ class WittyFeedSDKGoogleAnalytics {
     
     func sendRequst(payload: [String: String]){
         
-        print(payload)
         if ConnectionCheck.isConnectedToNetwork() {
-            //print(GA_URL,payload)
-            // print(payload)
-            
             Alamofire.request(GA_URL, method: .post, parameters: payload, encoding: JSONEncoding.default, headers: nil)
                 .responseJSON{ response in
-                    print(response)
-                    // callback("GA STATUS: \(String(describing: (response.response?.statusCode)!))")
+                    //print(response)
             }
         } else{
             print("disConnected")

@@ -37,7 +37,6 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-       // print(onefeedsdk.getAppId())
         
         let googleAnalytics = WittyFeedSDKGoogleAnalytics()
         googleAnalytics.sendAnalytics(typeArg: AnalyticsType.OneFeed, labelArg: "OneFeed viewed")
@@ -46,9 +45,7 @@ public class WittyFeedSDKOneFeedCV: UICollectionViewController, UICollectionView
         let frameworkBundle = Bundle(for: WittyFeedSDKMain.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("OneFeed-iOS-SDK.bundle")
         resourceBundle = Bundle(url: bundleURL!)
-//        if(resourceBundle == nil){
-//            resourceBundle = Bundle(for: WittyFeedSDKInterestsCV.self)
-//        }
+
         searchActivityView = UIView( frame: CGRect(x: 0, y: 0, width: WittyFeedSDKSingleton.instance.screen_width, height: WittyFeedSDKSingleton.instance.screen_height) )
         searchActivityView.backgroundColor = .white
         activityIndicator.center = CGPoint(x: view.bounds.size.width/2, y: 100)

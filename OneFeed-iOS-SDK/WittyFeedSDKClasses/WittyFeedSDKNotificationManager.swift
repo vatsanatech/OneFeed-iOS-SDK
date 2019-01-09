@@ -67,8 +67,7 @@ public class WittyFeedSDKNotificationManager {
         }
         
         let googleAnalytics = WittyFeedSDKGoogleAnalytics()
-       // googleAnalytics.sendAnalytics(appId: "102", categoryArg: AnalyticsType.NotificationReceived, labelArg: cloudMsg.story_id)
-        googleAnalytics.sendAnalytics(appId: cloudMsg.app_id, categoryArg: AnalyticsType.NotificationReceived, labelArg: cloudMsg.story_id, notificationId: cloudMsg.noid)
+        googleAnalytics.sendAnalytics(appId: cloudMsg.app_id, categoryArg: AnalyticsType.NotificationOpened, labelArg: cloudMsg.story_id, notificationId: cloudMsg.noid)
         
 //        let m_GA = WittyFeedSDKGoogleAnalytics(tracking_id: "UA-40875502-17", client_fcm: local_client_fcm!)
 //        m_GA.send_event_tracking_GA_request(

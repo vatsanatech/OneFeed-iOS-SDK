@@ -12,13 +12,9 @@ import UIKit
 struct Constants
     
 {
-    
-    static let sdk_version = "1.2.1"
+    static let sdk_version = "1.2.2"
     static let AnalyticsURL = "https://reqy4b30ec.execute-api.us-east-1.amazonaws.com/apptrack/"
-   // static let ANALYTICS_TRACKING_ID = "UA-40875502-17"
-    
     static let BASE_URL = "https://api.wittyfeed.com/Sdk/"
-    
     static let HOME_FEED = "home_feed_v5"
     static let SEARCH_FEED = "search_v5"
     static let TRACKING_URL = "https://apptrack.onefeed.ai/"

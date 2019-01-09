@@ -18,105 +18,100 @@ class OneFeedNativeCard {
     private var HIT_API = true
     var safariDelegate: SFSafariViewControllerDelegate!
     var vc_context: UIViewController!
-    var webViewObj: WebViewViewController!
     var cardIdUrl : String!
     var fetch_more_init_main_callback: (String) -> Void = {_ in }
+    var limit = 15
 
-    public init(){}
-    
-    func showCard(cardId : String, view: UIView , isVerticalImage: Bool, reference: String, index: Int, views: UIViewController) -> String {
+    func showCard(cardId : String, nativeCardView: UIView , isVerticalImage: Bool, reference: String, views: UIViewController) -> String {
         if vc_context == nil {
             vc_context = views
             cardIdUrl = cardId
         }
-        let titleStory = view.viewWithTag(1003) as! UILabel
-        let imageStory = view.viewWithTag(1001) as! UIImageView
-        let categoryName = view.viewWithTag(1004) as! UILabel
-        let layerView = view.viewWithTag(1002)
-        let card_view: mCustomUIView!
-        card_view = mCustomUIView(frame: CGRect(
-            x: 0,
-            y: 0,
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height))
-            
-            card_view.url_to_open = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[1].story_url
-            card_view.storyId = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[1].id!
-        layerView?.addSubview(card_view)
         
+        let imageStory = nativeCardView.viewWithTag(1001) as! UIImageView
+        let titleStory = nativeCardView.viewWithTag(1002) as! UILabel
+        let categoryName = nativeCardView.viewWithTag(1003) as! UILabel
         let cardSizeCount = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr.count
+        
         if cardSizeCount != nil {
-            
             INDEX += 1
-            fetchNewCard(cardFeedCount: cardSizeCount ?? 0, indx: INDEX, cardId: cardId)
+           // fetchNewCard(cardFeedCount: cardSizeCount ?? 0, indx: INDEX, cardId: cardId)
             if (INDEX > ((cardSizeCount ?? 1 ) - 1) ) {
                 INDEX = 0
-                
             }
-            let url_string = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].cover_image
-            let url = URL(string: url_string!)
-            layerView?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-            imageStory.kf.setImage(with: url)
+            
+            if INDEX == (cardSizeCount ?? 0) - 1 {
+                var INDEX = cardSizeCount!
+                limit = INDEX + 1
+                while INDEX < limit {
+                    WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.fetch_more_NativeCard_data(card_id: cardId, loadmore_offset: OFFSET_CARD, fetch_more_main_callback: { (status) in
+                        self.fetch_more_init_main_callback(status)
+                        if(status == "success"){
+                            print ("success")
+                        } else {
+                            print("error")
+                        }
+                    })
+                    INDEX = INDEX + 1
+                    OFFSET_CARD = OFFSET_CARD + 1
+                }
+            }
+            if isVerticalImage == true {
+                let url_string = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].cover_image
+                let url = URL(string: url_string!)
+                imageStory.kf.setImage(with: url)
+            } else {
+                let url_string = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].square_cover_image
+                let url = URL(string: url_string!)
+                imageStory.kf.setImage(with: url)
+            }
             categoryName.text = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].publisher_name
             titleStory.text = WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].story_title
             let googleAnalytics = WittyFeedSDKGoogleAnalytics()
-            googleAnalytics.sendAnalytics(typeArg: AnalyticsType.CardView, labelArg: "Native Card")
-           // layerView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:didTap: views)) ))
+            googleAnalytics.sendAnalytics(typeArg: AnalyticsType.CardView, labelArg: Constants.CARD_VIEWED)
             
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(myviewTapped(_:)))
             tapGesture.numberOfTapsRequired = 1
             tapGesture.numberOfTouchesRequired = 1
-            layerView?.addGestureRecognizer(tapGesture)
-          //  didSelect(url: WittyFeedSDKSingleton.instance.dict[cardId]!.card_arr[INDEX].story_url ?? "www.thepopple.com")
+            nativeCardView.addGestureRecognizer(tapGesture)
             
-            //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.tap(sender:viewss:)))
         }else{
             
-             fetchNewCard(cardFeedCount: cardSizeCount ?? 0, indx: INDEX, cardId: cardId)
+     
+         //   fetchNewCard(cardFeedCount: cardSizeCount ?? 0, indx: INDEX, cardId: cardId)
         }
-
         return  WittyFeedSDKSingleton.instance.dict[cardId]?.card_arr[INDEX].publisher_name ?? "OneFeed"
         
     }
     
-    func didSelect(url: String) -> String{
-        return url
-    }
-
     @objc func myviewTapped(_ sender: UITapGestureRecognizer) {
         
-        print("tap")
         let storyUrl : String = WittyFeedSDKSingleton.instance.dict[cardIdUrl]?.card_arr[INDEX].story_url ?? "www.thepopple.com"
+        let storyId = WittyFeedSDKSingleton.instance.dict[cardIdUrl]?.card_arr[INDEX].id
         let safariVC = SFSafariViewController(url: NSURL(string: storyUrl)! as URL)
         vc_context.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self as? SFSafariViewControllerDelegate
         let googleAnalytics = WittyFeedSDKGoogleAnalytics()
-        googleAnalytics.sendAnalytics(typeArg: AnalyticsType.NativeStory, labelArg: WittyFeedSDKSingleton.instance.dict[cardIdUrl]?.card_arr[INDEX].id ?? "0")
+        googleAnalytics.sendAnalytics(typeArg: AnalyticsType.NativeStory, labelArg: storyId ?? "0")
         
     }
     
-   
-    func fetchNewCard(cardFeedCount: Int, indx: Int, cardId: String) {
-        
-        if cardFeedCount >= 0 {
-            
-        } else {
-            if INDEX > cardFeedCount - 3 && HIT_API {
-                HIT_API = false
-                WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.fetch_more_NativeCard_data(card_id: cardId, loadmore_offset: OFFSET_CARD) { (status) in
-                    if(status == "success"){
-                       // self.collectionView?.reloadData()
-                        self.HIT_API = false
-                    } else {
-                        print("error")
-                    }
-                    
-                }
-                
-            }
-            
-        }
-
-    }
-    
+//    func fetchNewCard(cardFeedCount: Int, indx: Int, cardId: String) {
+//
+//        if cardFeedCount >= 0 {
+//
+//        } else {
+//            if INDEX > cardFeedCount - 1 && HIT_API {
+//                HIT_API = false
+//                WittyFeedSDKSingleton.instance.wittyFeed_sdk_main.fetch_more_NativeCard_data(card_id: cardId, loadmore_offset: OFFSET_CARD, fetch_more_main_callback: { (status) in
+//                    self.fetch_more_init_main_callback(status)
+//                    if(status == "success"){
+//
+//                    } else {
+//                        print("error")
+//                    }
+//                })
+//            }
+//        }
+//    }
 }
